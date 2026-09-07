@@ -65,6 +65,16 @@ export const ManualCollectPage: React.FC<ManualCollectPageProps> = ({
           report: generateReport,
         }),
       });
+
+      const contentType = res.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) {
+        // Firebase Cloud Hosting 모드 -> 안내 및 깃허브 액션 링크 제공
+        setRunMessage(
+          `☁️ 현재 웹앱은 '클라우드 정적 호스팅' 상태입니다. 아래의 [🚀 깃허브 클라우드 즉시 실행] 버튼을 누르시면 클라우드 서버에서 즉시 원격 수집이 시작됩니다!`
+        );
+        return;
+      }
+
       const data = await res.json();
       if (res.ok) {
         setRunMessage(`✅ ${data.message} (회차: ${data.label})`);
@@ -75,9 +85,12 @@ export const ManualCollectPage: React.FC<ManualCollectPageProps> = ({
         setRunMessage(`❌ 요청 실패: ${data.message}`);
       }
     } catch (err: any) {
-      setRunMessage(`❌ 오류 발생: ${err.message}`);
+      setRunMessage(
+        `☁️ 클라우드 호스팅 모드: 아래 [🚀 깃허브 클라우드 즉시 실행] 버튼을 클릭하시면 깃허브 가상 컴퓨터가 즉시 원격 수집을 가동합니다.`
+      );
     }
   };
+
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
@@ -243,10 +256,21 @@ export const ManualCollectPage: React.FC<ManualCollectPageProps> = ({
           </button>
         </div>
 
-        {/* Run Message Feedback */}
+        {/* Run Message Feedback & Cloud Action Trigger */}
         {runMessage && (
-          <div className="p-4 rounded-xl bg-slate-900 border border-slate-700 text-xs font-mono text-slate-200">
-            {runMessage}
+          <div className="p-4 rounded-xl bg-slate-900 border border-slate-700 text-xs text-slate-200 space-y-3">
+            <p className="font-mono">{runMessage}</p>
+            <div className="pt-1 flex flex-wrap gap-2">
+              <a
+                href="https://github.com/ibrkiller-penz/jinhak/actions/workflows/daily_collector.yml"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white rounded-xl text-xs font-bold transition shadow-md"
+              >
+                <Play className="w-3.5 h-3.5" />
+                🚀 깃허브 클라우드 원격 즉시 실행 (Run workflow)
+              </a>
+            </div>
           </div>
         )}
       </div>
