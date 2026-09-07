@@ -1,5 +1,5 @@
 import React from 'react';
-import { Activity, RefreshCw, BarChart3, FileSpreadsheet, PlayCircle } from 'lucide-react';
+import { Activity, RefreshCw, BarChart3, FileSpreadsheet, PlayCircle, FolderLock } from 'lucide-react';
 
 interface NavbarProps {
   currentTab: 'dashboard' | 'detail' | 'manual' | 'reports';
@@ -7,6 +7,7 @@ interface NavbarProps {
   isCollecting: boolean;
   serverTime: string;
   onRefresh: () => void;
+  onOpenDrive: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -15,6 +16,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   isCollecting,
   serverTime: _serverTime,
   onRefresh,
+  onOpenDrive,
 }) => {
   return (
     <header className="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
@@ -73,8 +75,18 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </nav>
 
-          {/* Right Status & Refresh Button */}
-          <div className="flex items-center gap-4">
+          {/* Right Status, Google Drive & Refresh Button */}
+          <div className="flex items-center gap-3">
+            {/* Google Drive Link with Lock */}
+            <button
+              onClick={onOpenDrive}
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white rounded-lg border border-blue-400/30 text-xs font-bold shadow-md shadow-blue-500/10 transition cursor-pointer"
+              title="보안 구글 드라이브 폴더 열기 (비밀번호: 1004)"
+            >
+              <FolderLock className="w-4 h-4 text-amber-300" />
+              <span>구글 드라이브</span>
+            </button>
+
             {/* Status indicator */}
             <div className="hidden sm:flex items-center gap-2 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700 text-xs">
               <span className="relative flex h-2 w-2">

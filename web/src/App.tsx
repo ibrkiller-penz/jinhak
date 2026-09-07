@@ -6,6 +6,7 @@ import { UniversityDetailPage } from './pages/UniversityDetailPage';
 import { ManualCollectPage } from './pages/ManualCollectPage';
 import { ReportsPage } from './pages/ReportsPage';
 import { CaptureModal } from './components/CaptureModal';
+import { PasswordModal } from './components/PasswordModal';
 import { db, collection, getDocs } from './firebase';
 
 export const App: React.FC = () => {
@@ -16,6 +17,8 @@ export const App: React.FC = () => {
   const [serverTime, setServerTime] = useState('');
   const [defaultLabel, setDefaultLabel] = useState('09월07일20시');
   const [previewImage, setPreviewImage] = useState<{ url: string; title: string } | null>(null);
+  const [isDriveModalOpen, setIsDriveModalOpen] = useState(false);
+  const [driveTargetUrl, setDriveTargetUrl] = useState('https://drive.google.com/drive/u/0/folders/1WmHB5_EqiZklq6kRnMXDn_kfbNXAD61j');
 
   const fetchStatusAndUnivs = async () => {
     // 1. Try local FastAPI server first if available
@@ -120,6 +123,10 @@ export const App: React.FC = () => {
         isCollecting={isCollecting}
         serverTime={serverTime}
         onRefresh={fetchStatusAndUnivs}
+        onOpenDrive={() => {
+          setDriveTargetUrl('https://drive.google.com/drive/u/0/folders/1WmHB5_EqiZklq6kRnMXDn_kfbNXAD61j');
+          setIsDriveModalOpen(true);
+        }}
       />
 
       {/* Main Content Area */}
@@ -167,6 +174,15 @@ export const App: React.FC = () => {
         imageUrl={previewImage?.url || null}
         title={previewImage?.title || ''}
         onClose={() => setPreviewImage(null)}
+      />
+
+      {/* Google Drive Password Protected Modal (Password: 1004) */}
+      <PasswordModal
+        isOpen={isDriveModalOpen}
+        onClose={() => setIsDriveModalOpen(false)}
+        onSuccess={() => setIsDriveModalOpen(false)}
+        targetUrl={driveTargetUrl}
+        title="구글 드라이브 보안 접속"
       />
     </div>
   );
