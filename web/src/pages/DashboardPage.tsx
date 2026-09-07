@@ -18,6 +18,8 @@ interface DashboardPageProps {
   isCollecting: boolean;
 }
 
+const TECH_KEYS = ['DGIST', 'GIST', 'KAIST', 'KENTECH', 'POSTECH', 'UNIST'];
+
 export const DashboardPage: React.FC<DashboardPageProps> = ({
   universities,
   onSelectUniv,
@@ -25,13 +27,15 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
   onQuickCollect,
   isCollecting,
 }) => {
-  const [filter, setFilter] = useState<'all' | 'gyodae' | 'tech' | 'ok'>('gyodae');
+  const [filter, setFilter] = useState<'all' | 'gyodae' | 'tech' | 'ok'>('all');
   const [search, setSearch] = useState('');
+
+  const isTech = (key: string) => TECH_KEYS.includes(key);
 
   // 필터링
   const filteredUnivs = universities.filter((u) => {
-    if (filter === 'gyodae' && !u.inScope) return false;
-    if (filter === 'tech' && u.inScope) return false;
+    if (filter === 'gyodae' && isTech(u.key)) return false;
+    if (filter === 'tech' && !isTech(u.key)) return false;
     if (filter === 'ok' && u.latestSnapshot?.status !== 'ok') return false;
 
     if (search.trim()) {
@@ -45,19 +49,21 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
     return true;
   });
 
-  // KPI 집계 (교대 기준)
-  const gyodaeList = universities.filter((u) => u.inScope);
-  const okGyodaeList = gyodaeList.filter((u) => u.latestSnapshot?.status === 'ok');
-  const totalJiwon = okGyodaeList.reduce(
+  // KPI 집계
+  const gyodaeList = universities.filter((u) => !isTech(u.key));
+  const techList = universities.filter((u) => isTech(u.key));
+  const okList = universities.filter((u) => u.latestSnapshot?.status === 'ok');
+  const totalJiwon = okList.reduce(
     (sum, u) => sum + (u.latestSnapshot?.jiwon || 0),
     0
   );
-  const totalMojip = okGyodaeList.reduce(
+  const totalMojip = okList.reduce(
     (sum, u) => sum + (u.latestSnapshot?.mojip || 0),
     0
   );
   const avgRatio =
     totalMojip > 0 ? (totalJiwon / totalMojip).toFixed(2) + ' : 1' : '-';
+
 
   return (
     <div className="space-y-6">
@@ -125,16 +131,6 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
         {/* Filter Pills */}
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
           <button
-            onClick={() => setFilter('gyodae')}
-            className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${
-              filter === 'gyodae'
-                ? 'bg-blue-600 text-white shadow'
-                : 'text-slate-300 hover:bg-slate-700/50'
-            }`}
-          >
-            교대 계열 (9)
-          </button>
-          <button
             onClick={() => setFilter('all')}
             className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${
               filter === 'all'
@@ -142,7 +138,17 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
                 : 'text-slate-300 hover:bg-slate-700/50'
             }`}
           >
-            전체 대학 (15)
+            전체 대학 ({universities.length})
+          </button>
+          <button
+            onClick={() => setFilter('gyodae')}
+            className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all ${
+              filter === 'gyodae'
+                ? 'bg-blue-600 text-white shadow'
+                : 'text-slate-300 hover:bg-slate-700/50'
+            }`}
+          >
+            교대 계열 ({gyodaeList.length})
           </button>
           <button
             onClick={() => setFilter('tech')}
@@ -152,7 +158,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
                 : 'text-slate-300 hover:bg-slate-700/50'
             }`}
           >
-            과기원 (6)
+            과기원/특성화대 ({techList.length})
           </button>
           <button
             onClick={() => setFilter('ok')}
@@ -162,7 +168,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
                 : 'text-slate-300 hover:bg-slate-700/50'
             }`}
           >
-            수집 완료만
+            수집 완료 ({okList.length})
           </button>
         </div>
 
