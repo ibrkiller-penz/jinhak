@@ -165,21 +165,49 @@ def extract_summary_from_tables(tables: list[Table]) -> dict[str, Any]:
             if not r:
                 continue
             first_cell = r[0].strip()
-            if "총계" in first_cell or "합계" in first_cell or "전체" in first_cell:
-                # 헤더에서 지원인원, 경쟁률, 모집인원 위치 탐색
-                header = t.rows[0]
-                norm_h = [h.strip() for h in header]
+            # 총계 / 합계 / 전체 행 감지
+            if "총계" in first_cell or "합계" in first_cell or "전체" in first_cell or any("총계" in c for c in r[:2]):
+                # 1) 셀 내의 경쟁률 패턴(예: 3.90 : 1 또는 3.90:1) 직접 추출
+                ratio_matches = []
+                for idx, cell in enumerate(r):
+                    if re.search(r"\d+\.?\d*\s*:\s*1", cell):
+                        ratio_matches.append((idx, cell))
+                
+                if ratio_matches:
+                    # 복수 전형 표(DGIST 등)의 경우 맨 마지막 경쟁률이 총계
+                    last_idx, last_ratio = ratio_matches[-1]
+                    summary["ratio"] = last_ratio.strip()
+                    
+                    # 경쟁률 바로 앞의 두 숫자(모집인원, 지원인원) 역방향 탐색
+                    nums = []
+                    for k in range(last_idx - 1, -1, -1):
+                        clean_num = re.sub(r"[^\d]", "", r[k])
+                        if clean_num.isdigit():
+                            nums.append(int(clean_num))
+                        if len(nums) == 2:
+                            break
+                    if len(nums) == 2:
+                        summary["mojip"] = nums[1]
+                        summary["jiwon"] = nums[0]
+                    elif len(nums) == 1:
+                        summary["jiwon"] = nums[0]
+                    return summary
+
+                # 2) 표준 헤더 인덱스 기반 탐색 (복수 헤더 행 대응)
+                header_rows = t.rows[:3]
                 mojip_idx = None
                 jiwon_idx = None
                 ratio_idx = None
 
-                for idx, col in enumerate(norm_h):
-                    if "모집" in col and "인원" in col and mojip_idx is None:
-                        mojip_idx = idx
-                    elif "지원" in col and "인원" in col and jiwon_idx is None:
-                        jiwon_idx = idx
-                    elif "경쟁" in col and ratio_idx is None:
-                        ratio_idx = idx
+                for h_row in header_rows:
+                    for idx, col in enumerate(h_row):
+                        c_clean = col.strip()
+                        if "모집" in c_clean and mojip_idx is None:
+                            mojip_idx = idx
+                        elif ("지원" in c_clean or "접수" in c_clean) and jiwon_idx is None:
+                            jiwon_idx = idx
+                        elif "경쟁" in c_clean and ratio_idx is None:
+                            ratio_idx = idx
 
                 if jiwon_idx is not None and jiwon_idx < len(r):
                     j_str = re.sub(r"[^\d]", "", r[jiwon_idx])
@@ -191,6 +219,9 @@ def extract_summary_from_tables(tables: list[Table]) -> dict[str, Any]:
                         summary["mojip"] = int(m_str)
                 if ratio_idx is not None and ratio_idx < len(r):
                     summary["ratio"] = r[ratio_idx].strip()
-                return summary
+                
+                if summary["ratio"] != "-" or summary["jiwon"] > 0:
+                    return summary
 
     return summary
+
