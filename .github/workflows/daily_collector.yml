@@ -1,9 +1,9 @@
-﻿name: 2027 수시 교대 경쟁률 20:10 정기 자동 수집
+﻿name: 2027 수시 교대 경쟁률 20:05 정기 자동 수집
 
 on:
   schedule:
-    # 매일 20:10 KST (11:10 UTC)
-    - cron: '10 11 * * *'
+    # 매일 20:05 KST (11:05 UTC)
+    - cron: '5 11 * * *'
   workflow_dispatch:
     inputs:
       label:

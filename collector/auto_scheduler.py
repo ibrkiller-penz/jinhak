@@ -28,11 +28,11 @@ KST = ZoneInfo("Asia/Seoul")
 def register_windows_task():
     python_exe = sys.executable
     script_path = str(ROOT_DIR / "collector" / "auto_scheduler.py")
-    cmd = f'schtasks /create /tn "GyodaeRatioDailyCollector" /tr "\\"{python_exe}\\" \\"{script_path}\\" --now" /sc daily /st 20:10 /f'
+    cmd = f'schtasks /create /tn "GyodaeRatioDailyCollector" /tr "\\"{python_exe}\\" \\"{script_path}\\" --now" /sc daily /st 20:05 /f'
     try:
         res = subprocess.run(cmd, shell=True, capture_output=True, text=True)
         if res.returncode == 0:
-            print("✅ [Windows Task Scheduler] 매일 저녁 20:10 수집 작업 등록 완료!")
+            print("✅ [Windows Task Scheduler] 매일 저녁 20:05 수집 작업 등록 완료!")
         else:
             print(f"작업 스케줄러 등록 출력: {res.stdout} {res.stderr}")
     except Exception as e:
@@ -40,11 +40,11 @@ def register_windows_task():
 
 
 def run_loop():
-    print("🕒 [Auto Scheduler] 20:10 KST 정기 자동 수집 대기 중...")
+    print("🕒 [Auto Scheduler] 20:05 KST 정기 자동 수집 대기 중...")
     while True:
         now = datetime.now(KST)
-        if now.hour == 20 and now.minute == 10:
-            print(f"🚀 [20:10 KST 감지] 정기 자동 수집 시작: {now.strftime('%Y-%m-%d %H:%M:%S')}")
+        if now.hour == 20 and now.minute == 5:
+            print(f"🚀 [20:05 KST 감지] 정기 자동 수집 시작: {now.strftime('%Y-%m-%d %H:%M:%S')}")
             asyncio.run(run_collector(is_auto=True))
             print("대기 모드로 복귀 (70초 휴식)...")
             time.sleep(70)
