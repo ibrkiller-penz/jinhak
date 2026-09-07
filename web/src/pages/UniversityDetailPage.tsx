@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import type { UniversityDetail } from '../types';
+import type { UniversityDetail, SnapshotDetail } from '../types';
+import { db, doc, getDoc, collection, getDocs } from '../firebase';
 import {
   ArrowLeft,
   ExternalLink,
@@ -28,6 +29,24 @@ interface UniversityDetailPageProps {
   onPreviewCapture: (url: string, title: string) => void;
 }
 
+const DEFAULT_ROUNDS_GYODAE = [
+  { label: '09월07일20시', scheduledAt: '2026-09-07T20:05:00+09:00', isFinal: false },
+  { label: '09월08일20시', scheduledAt: '2026-09-08T20:05:00+09:00', isFinal: false },
+  { label: '09월09일20시', scheduledAt: '2026-09-09T20:05:00+09:00', isFinal: false },
+  { label: '09월10일20시', scheduledAt: '2026-09-10T20:05:00+09:00', isFinal: false },
+  { label: '09월11일10시', scheduledAt: '2026-09-11T10:00:00+09:00', isFinal: false },
+  { label: '09월11일15시', scheduledAt: '2026-09-11T15:00:00+09:00', isFinal: false },
+  { label: '최종', scheduledAt: '2026-09-11T18:00:00+09:00', isFinal: true },
+];
+
+const DEFAULT_ROUNDS_TECH = [
+  { label: '09월07일20시', scheduledAt: '2026-09-07T20:05:00+09:00', isFinal: false },
+  { label: '09월08일20시', scheduledAt: '2026-09-08T20:05:00+09:00', isFinal: false },
+  { label: '09월09일20시', scheduledAt: '2026-09-09T20:05:00+09:00', isFinal: false },
+  { label: '09월10일20시', scheduledAt: '2026-09-10T20:05:00+09:00', isFinal: false },
+  { label: '최종', scheduledAt: '2026-09-11T18:00:00+09:00', isFinal: true },
+];
+
 export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
   univKey,
   onBack,
@@ -38,16 +57,105 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
   const [activeTab, setActiveTab] = useState<'table' | 'chart' | 'captures'>('table');
 
   useEffect(() => {
-    fetch(`/api/snapshots/${univKey}`)
-      .then((res) => res.json())
-      .then((d) => {
-        setData(d);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setLoading(false);
-      });
+    let isMounted = true;
+
+    async function loadData() {
+      // 1. Local FastAPI Try
+      try {
+        const res = await fetch(`/api/snapshots/${encodeURIComponent(univKey)}`);
+        const ctype = res.headers.get('content-type') || '';
+        if (res.ok && ctype.includes('application/json')) {
+          const d = await res.json();
+          if (isMounted && d && d.university) {
+            setData(d);
+            setLoading(false);
+            return;
+          }
+        }
+      } catch {
+        // Fallback to Firestore
+      }
+
+      // 2. Cloud Firestore Direct Fetch
+      try {
+        const docRef = doc(db, '교대경쟁률', univKey);
+        const docSnap = await getDoc(docRef);
+        const meta = docSnap.exists() ? docSnap.data() : null;
+
+        const snapColl = collection(db, '교대경쟁률', univKey, 'snapshots');
+        const snapDocs = await getDocs(snapColl);
+
+        const snapshotsList: SnapshotDetail[] = [];
+        snapDocs.forEach((sDoc) => {
+          const s = sDoc.data();
+          let parsedTables = s.tables || [];
+          if (s.tablesJson) {
+            try {
+              parsedTables = JSON.parse(s.tablesJson);
+            } catch (e) {
+              console.error('tablesJson parse error:', e);
+            }
+          }
+          snapshotsList.push({
+            label: s.label || '09월07일20시',
+            capturedAt: s.capturedAt || '',
+            status: s.status || 'ok',
+            notice: s.notice || null,
+            summary: s.summary || {},
+            captureUrl: s.screenshot?.webViewLink || s.captureUrl || null,
+            xlsxUrl: s.backdata?.webViewLink || s.xlsxUrl || null,
+            tables: parsedTables,
+          });
+        });
+
+        // 시간순 정렬
+        snapshotsList.sort((a, b) => (a.capturedAt > b.capturedAt ? 1 : -1));
+
+        // If no snapshots but lastSnapshot exists
+        if (snapshotsList.length === 0 && meta?.lastSnapshot) {
+          snapshotsList.push({
+            label: meta.lastSnapshot.label || '09월07일20시',
+            capturedAt: meta.lastSnapshot.capturedAt || new Date().toISOString(),
+            status: meta.lastSnapshot.status || 'ok',
+            notice: meta.lastSnapshot.notice || null,
+            summary: meta.lastSnapshot.summary || {
+              ratio: meta.lastSnapshot.ratio || '-',
+              mojip: meta.lastSnapshot.mojip || 0,
+              jiwon: meta.lastSnapshot.jiwon || 0,
+            },
+            tables: [],
+          });
+        }
+
+        const isTechUniv = ['DGIST', 'GIST', 'KAIST', 'KENTECH', 'POSTECH', 'UNIST'].includes(univKey);
+
+        const detail: UniversityDetail = {
+          university: {
+            key: univKey,
+            fullName: meta?.fullName || univKey,
+            platform: meta?.platform || 'uwayapply',
+            ratioUrl: meta?.ratioUrl || null,
+            acceptStart: meta?.acceptStart || null,
+            acceptEnd: meta?.acceptEnd || null,
+            rounds: meta?.rounds || (isTechUniv ? DEFAULT_ROUNDS_TECH : DEFAULT_ROUNDS_GYODAE),
+          },
+          snapshots: snapshotsList,
+        };
+
+        if (isMounted) {
+          setData(detail);
+          setLoading(false);
+        }
+      } catch (err) {
+        console.error('Firestore snapshot loading error:', err);
+        if (isMounted) setLoading(false);
+      }
+    }
+
+    loadData();
+    return () => {
+      isMounted = false;
+    };
   }, [univKey]);
 
   if (loading) {

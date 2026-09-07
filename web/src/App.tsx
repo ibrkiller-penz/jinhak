@@ -52,6 +52,12 @@ export const App: React.FC = () => {
       const list: University[] = [];
       querySnapshot.forEach((d) => {
         const data = d.data();
+        const lastSnap = data.lastSnapshot || {};
+        const summary = lastSnap.summary || {};
+        const mojip = lastSnap.mojip ?? summary.mojip ?? 0;
+        const jiwon = lastSnap.jiwon ?? summary.jiwon ?? 0;
+        const ratio = lastSnap.ratio ?? summary.ratio ?? '-';
+
         list.push({
           key: d.id,
           fullName: data.fullName || d.id,
@@ -64,18 +70,31 @@ export const App: React.FC = () => {
           note: data.note || '',
           totalRounds: data.totalRounds || 7,
           snapshotCount: data.snapshotCount || 1,
-          latestSnapshot: data.lastSnapshot || {
-            label: '09월07일20시',
-            capturedAt: new Date().toISOString(),
-            status: data.ratioUrl ? 'ok' : 'pre',
-            notice: null,
-            mojip: 0,
-            jiwon: 0,
-            ratio: '-',
+          latestSnapshot: {
+            label: lastSnap.label || '09월07일20시',
+            capturedAt: lastSnap.capturedAt || new Date().toISOString(),
+            status: (lastSnap.status as any) || (data.ratioUrl ? 'ok' : 'pre'),
+            notice: lastSnap.notice || null,
+            mojip,
+            jiwon,
+            ratio,
+            captureUrl: lastSnap.screenshot?.webViewLink || lastSnap.captureUrl || null,
           },
         });
       });
       if (list.length > 0) {
+        // 정렬: 교대 우선, 과기원 그룹
+        const order = [
+          '경인교대', '공주교대', '광주교대', '대구교대', '부산교대',
+          '서울교대', '전주교대', '진주교대', '청주교대', '춘천교대', '한국교원대',
+          'DGIST', 'GIST', 'KAIST', 'KENTECH', 'POSTECH', 'UNIST'
+        ];
+        list.sort((a, b) => {
+          const idxA = order.indexOf(a.key);
+          const idxB = order.indexOf(b.key);
+          if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+          return a.key.localeCompare(b.key);
+        });
         setUniversities(list);
       }
     } catch (e) {

@@ -73,7 +73,10 @@ class FirestoreRepo:
         screenshot_meta: dict[str, str] | None = None,
         backdata_meta: dict[str, str] | None = None,
     ):
-        """스냅샷 저장."""
+        tables_list = [
+            {"title": t.title, "rows": t.rows}
+            for t in snapshot.tables
+        ]
         data = {
             "label": snapshot.label,
             "capturedAt": snapshot.captured_at,
@@ -83,15 +86,23 @@ class FirestoreRepo:
             "summary": snapshot.summary,
             "screenshot": screenshot_meta or {},
             "backdata": backdata_meta or {},
-            "tables": [
-                {"title": t.title, "rows": t.rows}
-                for t in snapshot.tables
-            ],
+            "tables": tables_list,
         }
 
         if self.db:
             try:
-                self.db.collection("교대경쟁률").document(univ_key).collection("snapshots").document(doc_id).set(data)
+                fs_data = {
+                    "label": snapshot.label,
+                    "capturedAt": snapshot.captured_at,
+                    "status": snapshot.status,
+                    "errorMessage": snapshot.error_message,
+                    "notice": snapshot.notice,
+                    "summary": snapshot.summary,
+                    "screenshot": screenshot_meta or {},
+                    "backdata": backdata_meta or {},
+                    "tablesJson": json.dumps(tables_list, ensure_ascii=False),
+                }
+                self.db.collection("교대경쟁률").document(univ_key).collection("snapshots").document(doc_id).set(fs_data)
                 self.db.collection("교대경쟁률").document(univ_key).set({
                     "lastSnapshot": {
                         "label": snapshot.label,
