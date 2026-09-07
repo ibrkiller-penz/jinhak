@@ -1,0 +1,15 @@
+﻿__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.firebase/
+out/
+dist/
+build/
+node_modules/
+*.log
+.env
+token.json
+service_account.json
+gdrive_key.json
+firebase_key.json

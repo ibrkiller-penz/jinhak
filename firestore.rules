@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 대학 메타데이터 및 스냅샷 읽기 허용
+    match /교대경쟁률/{univId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+
+      match /snapshots/{snapshotId} {
+        allow read: if true;
+        allow write: if request.auth != null;
+      }
+    }
+
+    // 수집 로그
+    match /수집로그/{logId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+
+    // 수동 제어 명령 (로그인 사용자 요청 가능)
+    match /commands/{commandId} {
+      allow read, write: if true;
+    }
+  }
+}
