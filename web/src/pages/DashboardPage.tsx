@@ -75,9 +75,9 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
             <Building2 className="w-6 h-6" />
           </div>
           <div>
-            <p className="text-xs text-slate-400 font-medium">관리 대상 교대</p>
+            <p className="text-xs text-slate-400 font-medium">관리 대상 대학</p>
             <h4 className="text-2xl font-bold text-white mt-0.5">
-              {gyodaeList.length}개교
+              {universities.length}개교
             </h4>
           </div>
         </div>
@@ -88,11 +88,11 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
             <CheckCircle2 className="w-6 h-6" />
           </div>
           <div>
-            <p className="text-xs text-slate-400 font-medium">수집 완료 교대</p>
+            <p className="text-xs text-slate-400 font-medium">수집 완료 대학</p>
             <h4 className="text-2xl font-bold text-emerald-400 mt-0.5">
-              {okGyodaeList.length}{' '}
+              {okList.length}{' '}
               <span className="text-sm font-normal text-slate-400">
-                / {gyodaeList.length}
+                / {universities.length}
               </span>
             </h4>
           </div>
