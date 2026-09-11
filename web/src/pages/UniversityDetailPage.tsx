@@ -196,18 +196,35 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
       ? snapshots[activeSnapIndex]
       : null;
 
-  // 차트 데이터 변환
-  const chartData = snapshots.map((s) => {
-    let rVal = 0;
-    if (s.summary?.ratio) {
-      const match = s.summary.ratio.match(/([\d.]+)/);
-      if (match) rVal = parseFloat(match[1]);
+  // 차트 데이터 변환 (상단 7개 일정 슬롯 고정 X축 생성, 최종은 비워둠)
+  const chartData = (univ.rounds || []).map((r) => {
+    // 1. Exact match first (최신 스냅샷 우선)
+    let snap = [...snapshots].reverse().find((s) => s.label === r.label);
+
+    // 2. Fallback for closing day rounds (10시, 14/15시, 최종)
+    if (!snap) {
+      if (r.label.includes('15시') || r.label.includes('14시')) {
+        snap = [...snapshots].reverse().find((s) => s.label.includes('14시') || s.label.includes('15시'));
+      } else if (r.label.includes('10시')) {
+        snap = [...snapshots].reverse().find((s) => s.label.includes('10시') && !s.label.includes('10일'));
+      } else if (r.label === '최종') {
+        snap = [...snapshots].reverse().find((s) => s.label === '최종' || s.label.includes('최종'));
+      }
     }
+
+    let rVal: number | null = null;
+    if (snap && !r.isFinal && snap.summary?.ratio) {
+      const match = String(snap.summary.ratio).match(/([\d.]+)/);
+      if (match) {
+        rVal = parseFloat(match[1]);
+      }
+    }
+
     return {
-      label: s.label,
-      capturedAt: s.capturedAt,
+      label: r.label,
       ratio: rVal,
-      jiwon: s.summary?.jiwon || 0,
+      jiwon: snap && !r.isFinal ? snap.summary?.jiwon || 0 : null,
+      mojip: snap && !r.isFinal ? snap.summary?.mojip || 0 : null,
     };
   });
 
@@ -454,20 +471,25 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
       {/* Tab 2: Recharts Trend Chart */}
       {activeTab === 'chart' && (
         <div className="bg-slate-800/80 rounded-2xl border border-slate-700/80 p-5 shadow-lg space-y-4">
-          <h4 className="text-sm font-bold text-white flex items-center gap-2">
-            <TrendingUp className="w-4 h-4 text-blue-400" />
-            회차별 총 경쟁률 추이
-          </h4>
-          {chartData.length <= 1 ? (
+          <div className="flex items-center justify-between">
+            <h4 className="text-sm font-bold text-white flex items-center gap-2">
+              <TrendingUp className="w-4 h-4 text-blue-400" />
+              회차별 총 경쟁률 추이
+            </h4>
+            <span className="text-xs text-slate-400">
+              (수집된 회차만 연결, '최종' 등 미수집 회차는 X축 슬롯 유지)
+            </span>
+          </div>
+          {chartData.filter((d) => d.ratio !== null).length === 0 ? (
             <div className="h-64 flex items-center justify-center text-xs text-slate-400">
-              회차별 추이 분석을 위해 2회 이상의 수집 스냅샷이 필요합니다. (현재 {chartData.length}회 수집됨)
+              아직 수집된 경쟁률 데이터가 없습니다.
             </div>
           ) : (
             <div className="h-80 w-full pt-4">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={chartData}>
+                <LineChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 20 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-                  <XAxis dataKey="label" stroke="#94a3b8" fontSize={11} />
+                  <XAxis dataKey="label" stroke="#94a3b8" fontSize={11} interval={0} />
                   <YAxis stroke="#94a3b8" fontSize={11} domain={['auto', 'auto']} />
                   <Tooltip
                     contentStyle={{
@@ -477,6 +499,10 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
                       color: '#fff',
                       fontSize: '12px',
                     }}
+                    formatter={(value: any) => [
+                      value !== null && value !== undefined ? `${value} : 1` : '미수집',
+                      '경쟁률',
+                    ]}
                   />
                   <Line
                     type="monotone"
@@ -486,6 +512,7 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
                     strokeWidth={3}
                     dot={{ fill: '#38bdf8', r: 5 }}
                     activeDot={{ r: 8 }}
+                    connectNulls={false}
                   />
                 </LineChart>
               </ResponsiveContainer>
