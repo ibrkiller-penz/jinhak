@@ -80,13 +80,21 @@ export const ReportsPage: React.FC = () => {
 
           <div className="flex items-center gap-2.5 flex-wrap shrink-0">
             <a
+              href="/2027대입_수시모집경쟁률취합_정보분석3팀_교대_최신.xlsx"
+              download="2027대입_수시모집경쟁률취합_정보분석3팀_교대_최신.xlsx"
+              className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-md cursor-pointer"
+            >
+              <Download className="w-4 h-4" />
+              최신 취합 엑셀 다운로드
+            </a>
+            <a
               href="https://drive.google.com/drive/u/0/folders/1WmHB5_EqiZklq6kRnMXDn_kfbNXAD61j"
               target="_blank"
               rel="noreferrer"
               className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-md cursor-pointer"
             >
               <Download className="w-4 h-4" />
-              구글 드라이브 취합본 열기 (암호: 1004)
+              구글 드라이브 열기 (암호: 1004)
             </a>
           </div>
         </div>
