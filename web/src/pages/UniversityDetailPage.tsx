@@ -183,6 +183,15 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
   }
 
   const { university: univ, snapshots } = data;
+  const [selectedSnapIndex, setSelectedSnapIndex] = useState<number>(
+    snapshots.length > 0 ? snapshots.length - 1 : 0
+  );
+
+  // 현재 선택된 스냅샷 (기본값: 최신 스냅샷)
+  const currentSnapshot =
+    snapshots.length > 0 && selectedSnapIndex >= 0 && selectedSnapIndex < snapshots.length
+      ? snapshots[selectedSnapIndex]
+      : (snapshots[snapshots.length - 1] || null);
 
   // 차트 데이터 변환
   const chartData = snapshots.map((s) => {
@@ -234,14 +243,14 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
               실시간 사이트
             </a>
           )}
-          {snapshots.length > 0 && snapshots[snapshots.length - 1].xlsxUrl && (
+          {currentSnapshot && currentSnapshot.xlsxUrl && (
             <a
-              href={snapshots[snapshots.length - 1].xlsxUrl!}
+              href={currentSnapshot.xlsxUrl}
               download
               className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 text-xs font-medium rounded-xl border border-emerald-500/30 transition"
             >
               <FileSpreadsheet className="w-3.5 h-3.5" />
-              백데이터 다운로드
+              {currentSnapshot.label} 백데이터 다운로드
             </a>
           )}
         </div>
@@ -249,25 +258,54 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
 
       {/* Schedule Rounds Progress Milestone */}
       <div className="bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60">
-        <h4 className="text-xs font-semibold text-slate-400 mb-3 flex items-center gap-1.5">
-          <Calendar className="w-4 h-4 text-blue-400" />
-          수집 일정 진행 현황 (총 {univ.rounds.length}회차)
-        </h4>
+        <div className="flex items-center justify-between mb-3">
+          <h4 className="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
+            <Calendar className="w-4 h-4 text-blue-400" />
+            수집 일정 진행 현황 (회차를 클릭하면 해당 시점의 데이터로 전환됩니다)
+          </h4>
+          <span className="text-[11px] text-blue-400 font-medium">
+            총 {snapshots.length}개 회차 수집 완료
+          </span>
+        </div>
+
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
           {univ.rounds.map((r, idx) => {
-            const matchedSnap = snapshots.find((s) => s.label === r.label);
+            // 1. Exact or intelligent date matching
+            let snapIdx = snapshots.findIndex((s) => s.label === r.label);
+            if (snapIdx === -1) {
+              const dateMatch = r.label.match(/(\d+월\d+일)/);
+              if (dateMatch) {
+                const datePrefix = dateMatch[1];
+                snapIdx = snapshots.findIndex(
+                  (s) => s.label.startsWith(datePrefix) || s.capturedAt.includes(datePrefix.replace('월', '-').replace('일', ''))
+                );
+              }
+            }
+
+            const matchedSnap = snapIdx !== -1 ? snapshots[snapIdx] : null;
             const isCompleted = !!matchedSnap;
+            const isSelected = matchedSnap && selectedSnapIndex === snapIdx;
+
             return (
               <div
                 key={idx}
+                onClick={() => {
+                  if (matchedSnap) setSelectedSnapIndex(snapIdx);
+                }}
                 className={`p-2.5 rounded-xl border text-center transition-all ${
-                  isCompleted
-                    ? 'bg-blue-600/10 border-blue-500/30 text-blue-300'
+                  isCompleted ? 'cursor-pointer hover:scale-[1.02]' : 'cursor-default'
+                } ${
+                  isSelected
+                    ? 'bg-blue-600 border-blue-400 text-white shadow-lg shadow-blue-500/30 ring-2 ring-blue-400'
+                    : isCompleted
+                    ? 'bg-blue-600/20 border-blue-500/40 text-blue-300 hover:bg-blue-600/30'
                     : 'bg-slate-900/40 border-slate-800 text-slate-500'
                 }`}
               >
-                <div className="text-xs font-bold">{r.label}</div>
-                <div className="text-[10px] mt-0.5 opacity-80">
+                <div className="text-xs font-bold truncate">
+                  {matchedSnap ? matchedSnap.label : r.label}
+                </div>
+                <div className={`text-[10px] mt-0.5 font-mono ${isSelected ? 'text-blue-100 font-bold' : isCompleted ? 'text-emerald-400' : 'opacity-70'}`}>
                   {isCompleted
                     ? `${matchedSnap.summary?.ratio || '수집완료'}`
                     : '예정'}
@@ -317,14 +355,46 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
 
       {/* Tab 1: Wide Table Preview */}
       {activeTab === 'table' && (
-        <div className="bg-slate-800/80 rounded-2xl border border-slate-700/80 p-4 overflow-hidden shadow-lg">
-          {snapshots.length === 0 ? (
+        <div className="bg-slate-800/80 rounded-2xl border border-slate-700/80 p-5 overflow-hidden shadow-lg space-y-4">
+          {/* Snapshot selector header */}
+          {snapshots.length > 0 && currentSnapshot && (
+            <div className="flex flex-wrap items-center justify-between gap-3 bg-slate-900/80 p-3.5 rounded-xl border border-slate-700">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold text-slate-300">조회 회차:</span>
+                <select
+                  value={selectedSnapIndex}
+                  onChange={(e) => setSelectedSnapIndex(Number(e.target.value))}
+                  className="bg-slate-800 border border-slate-700 text-white text-xs font-bold rounded-lg px-3 py-1.5 focus:outline-none focus:border-blue-500"
+                >
+                  {snapshots.map((s, sIdx) => (
+                    <option key={sIdx} value={sIdx}>
+                      {s.label} ({s.summary?.ratio || '-'}) - {s.capturedAt.replace('T', ' ').slice(0, 16)}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="flex items-center gap-3 text-xs">
+                <span className="text-slate-400">
+                  모집: <strong className="text-white font-mono">{currentSnapshot.summary?.mojip || 0}명</strong>
+                </span>
+                <span className="text-slate-400">
+                  지원: <strong className="text-emerald-400 font-mono">{currentSnapshot.summary?.jiwon || 0}명</strong>
+                </span>
+                <span className="text-slate-400">
+                  총 경쟁률: <strong className="text-blue-400 font-mono font-bold text-sm">{currentSnapshot.summary?.ratio || '-'}</strong>
+                </span>
+              </div>
+            </div>
+          )}
+
+          {!currentSnapshot || !currentSnapshot.tables || currentSnapshot.tables.length === 0 ? (
             <p className="text-center py-12 text-sm text-slate-400">
               아직 수집된 스냅샷 데이터가 없습니다. 상단의 '수동 실행' 탭에서 첫 회차 수집을 실행해 보세요.
             </p>
           ) : (
             <div className="space-y-6">
-              {snapshots[snapshots.length - 1].tables.map((table, tIdx) => (
+              {currentSnapshot.tables.map((table, tIdx) => (
                 <div key={tIdx} className="space-y-2">
                   {table.title && (
                     <h5 className="font-bold text-sm text-amber-300 flex items-center gap-2">
