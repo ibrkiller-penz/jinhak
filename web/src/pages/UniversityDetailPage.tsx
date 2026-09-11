@@ -242,12 +242,12 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
     return 50;
   };
 
-  // 차트 데이터 변환 (상단 8개 일정 슬롯, 11일 회차 간격 좁힘, 최종은 비워둠)
+  // 차트 데이터 변환 (상단 8개 일정 슬롯, 11일 회차 간격 좁힘, 최종 포함)
   const chartData = (univ.rounds || []).map((r) => {
     const snap = findMatchingSnap(r.label);
 
     let rVal: number | null = null;
-    if (snap && !r.isFinal && snap.summary?.ratio) {
+    if (snap && snap.summary?.ratio) {
       const match = String(snap.summary.ratio).match(/([\d.]+)/);
       if (match) {
         rVal = parseFloat(match[1]);
@@ -259,8 +259,8 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
       label: r.label,
       displayLabel: r.label.replace('09월', '09/').replace('일', ' '),
       ratio: rVal,
-      jiwon: snap && !r.isFinal ? snap.summary?.jiwon || 0 : null,
-      mojip: snap && !r.isFinal ? snap.summary?.mojip || 0 : null,
+      jiwon: snap ? snap.summary?.jiwon || 0 : null,
+      mojip: snap ? snap.summary?.mojip || 0 : null,
     };
   });
 
