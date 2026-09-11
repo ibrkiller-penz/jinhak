@@ -61,16 +61,62 @@ export const ReportsPage: React.FC = () => {
         </button>
       </div>
 
-      {/* 1. Generated Reports List */}
+      {/* 1. Master Report Direct Banner */}
+      <div className="bg-gradient-to-r from-blue-900/40 via-indigo-900/40 to-slate-900/60 p-6 rounded-2xl border border-blue-500/30 shadow-xl space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center border border-emerald-500/30 shrink-0">
+              <FileSpreadsheet className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-base font-bold text-white flex items-center gap-2">
+                2027학년도 수시 교대 경쟁률 취합보고서 (최신 통합 마스터본)
+              </h4>
+              <p className="text-xs text-slate-300 mt-1">
+                9월 7일부터 9월 11일 마감 회차까지 17개 대학(교대 11개교 + 과기원 6개교)의 전형별 지원인원 및 경쟁률 추이가 시트별로 취합된 통합 엑셀 문서입니다.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2.5 flex-wrap shrink-0">
+            <a
+              href="https://drive.google.com/drive/u/0/folders/1WmHB5_EqiZklq6kRnMXDn_kfbNXAD61j"
+              target="_blank"
+              rel="noreferrer"
+              className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-md cursor-pointer"
+            >
+              <Download className="w-4 h-4" />
+              구글 드라이브 취합본 열기 (암호: 1004)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* 2. Generated Reports List */}
       <div className="space-y-4">
         <h4 className="text-sm font-bold text-white flex items-center gap-2">
           <Download className="w-4 h-4 text-blue-400" />
-          생성된 취합 보고서 목록 ({reports.length}개)
+          구글 드라이브 대학별 스냅샷 및 취합 보고서 ({reports.length || 1}개)
         </h4>
 
         {reports.length === 0 ? (
-          <div className="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 text-center text-xs text-slate-400">
-            아직 생성된 통합 취합 보고서가 없습니다. '수동 실행' 탭에서 보고서 생성을 포함하여 수집을 실행해 보세요.
+          <div className="bg-slate-800/60 p-5 rounded-2xl border border-slate-700/80 flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <FileSpreadsheet className="w-5 h-5 text-emerald-400" />
+              <div>
+                <div className="text-xs font-bold text-white">2027학년도_수시_교대경쟁률취합_정보분석3팀_최신.xlsx</div>
+                <div className="text-[10px] text-slate-400 mt-0.5">구글 드라이브 _취합 폴더 내 실시간 동기화 완료 (9/7 ~ 9/11 전 회차 수록)</div>
+              </div>
+            </div>
+            <a
+              href="https://drive.google.com/drive/u/0/folders/1WmHB5_EqiZklq6kRnMXDn_kfbNXAD61j"
+              target="_blank"
+              rel="noreferrer"
+              className="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5"
+            >
+              <Download className="w-3.5 h-3.5" />
+              드라이브에서 확인
+            </a>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
