@@ -55,9 +55,11 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
   const [data, setData] = useState<UniversityDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<'table' | 'chart' | 'captures'>('table');
+  const [selectedSnapIndex, setSelectedSnapIndex] = useState<number | null>(null);
 
   useEffect(() => {
     let isMounted = true;
+    setSelectedSnapIndex(null);
 
     async function loadData() {
       // 1. Local FastAPI Try
@@ -183,15 +185,16 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
   }
 
   const { university: univ, snapshots } = data;
-  const [selectedSnapIndex, setSelectedSnapIndex] = useState<number>(
-    snapshots.length > 0 ? snapshots.length - 1 : 0
-  );
+  const activeSnapIndex =
+    selectedSnapIndex !== null && selectedSnapIndex >= 0 && selectedSnapIndex < snapshots.length
+      ? selectedSnapIndex
+      : snapshots.length - 1;
 
   // 현재 선택된 스냅샷 (기본값: 최신 스냅샷)
   const currentSnapshot =
-    snapshots.length > 0 && selectedSnapIndex >= 0 && selectedSnapIndex < snapshots.length
-      ? snapshots[selectedSnapIndex]
-      : (snapshots[snapshots.length - 1] || null);
+    snapshots.length > 0 && activeSnapIndex >= 0 && activeSnapIndex < snapshots.length
+      ? snapshots[activeSnapIndex]
+      : null;
 
   // 차트 데이터 변환
   const chartData = snapshots.map((s) => {
@@ -284,7 +287,7 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
 
             const matchedSnap = snapIdx !== -1 ? snapshots[snapIdx] : null;
             const isCompleted = !!matchedSnap;
-            const isSelected = matchedSnap && selectedSnapIndex === snapIdx;
+            const isSelected = matchedSnap && activeSnapIndex === snapIdx;
 
             return (
               <div
@@ -362,7 +365,7 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
               <div className="flex items-center gap-2">
                 <span className="text-xs font-bold text-slate-300">조회 회차:</span>
                 <select
-                  value={selectedSnapIndex}
+                  value={activeSnapIndex}
                   onChange={(e) => setSelectedSnapIndex(Number(e.target.value))}
                   className="bg-slate-800 border border-slate-700 text-white text-xs font-bold rounded-lg px-3 py-1.5 focus:outline-none focus:border-blue-500"
                 >
