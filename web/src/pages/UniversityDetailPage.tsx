@@ -229,7 +229,20 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
     return null;
   };
 
-  // 차트 데이터 변환 (상단 8개 일정 슬롯 고정 X축 생성, 최종은 비워둠)
+  // 라운드별 X축 상대 좌표 (11일 회차들을 시각적으로 가깝게 배치)
+  const getRoundX = (label: string) => {
+    if (label.includes('07일') || label.includes('7일')) return 0;
+    if (label.includes('08일') || label.includes('8일')) return 22;
+    if (label.includes('09일') || label.includes('9일')) return 44;
+    if (label.includes('10일') && label.includes('20시')) return 66;
+    if (label.includes('11일10시') || (label.includes('10시') && !label.includes('10일'))) return 77;
+    if (label.includes('14시')) return 84;
+    if (label.includes('15시')) return 91;
+    if (label === '최종' || label.includes('최종')) return 100;
+    return 50;
+  };
+
+  // 차트 데이터 변환 (상단 8개 일정 슬롯, 11일 회차 간격 좁힘, 최종은 비워둠)
   const chartData = (univ.rounds || []).map((r) => {
     const snap = findMatchingSnap(r.label);
 
@@ -242,7 +255,9 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
     }
 
     return {
+      x: getRoundX(r.label),
       label: r.label,
+      displayLabel: r.label.replace('09월', '09/').replace('일', ' '),
       ratio: rVal,
       jiwon: snap && !r.isFinal ? snap.summary?.jiwon || 0 : null,
       mojip: snap && !r.isFinal ? snap.summary?.mojip || 0 : null,
@@ -486,7 +501,7 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
               회차별 총 경쟁률 추이
             </h4>
             <span className="text-xs text-slate-400">
-              (수집된 회차만 연결, '최종' 등 미수집 회차는 X축 슬롯 유지)
+              (마감일 11일 회차는 실제 시간 간격을 반영하여 밀착 배치됨)
             </span>
           </div>
           {chartData.filter((d) => d.ratio !== null).length === 0 ? (
@@ -496,9 +511,20 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
           ) : (
             <div className="h-80 w-full pt-4">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 20 }}>
+                <LineChart data={chartData} margin={{ top: 10, right: 30, left: 0, bottom: 20 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-                  <XAxis dataKey="label" stroke="#94a3b8" fontSize={11} interval={0} />
+                  <XAxis
+                    type="number"
+                    dataKey="x"
+                    domain={[0, 100]}
+                    ticks={chartData.map((d) => d.x)}
+                    tickFormatter={(val) => {
+                      const item = chartData.find((d) => d.x === val);
+                      return item ? item.displayLabel : '';
+                    }}
+                    stroke="#94a3b8"
+                    fontSize={11}
+                  />
                   <YAxis stroke="#94a3b8" fontSize={11} domain={['auto', 'auto']} />
                   <Tooltip
                     contentStyle={{
@@ -507,6 +533,9 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
                       borderRadius: '12px',
                       color: '#fff',
                       fontSize: '12px',
+                    }}
+                    labelFormatter={(_val, payload) => {
+                      return payload?.[0]?.payload?.label || '';
                     }}
                     formatter={(value: any) => [
                       value !== null && value !== undefined ? `${value} : 1` : '미수집',
