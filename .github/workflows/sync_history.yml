@@ -1,0 +1,90 @@
+﻿name: 8일~10일 과거 수집 이력 아티팩트 일괄 다운로드 및 Firestore 동기화
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/sync_history.yml'
+
+jobs:
+  download-and-sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+
+      - name: Python 3.10 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Node.js 설정
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 의존성 패키지 설치
+        run: |
+          pip install openpyxl requests python-dotenv
+          npm install --prefix web
+
+      - name: 과거 8일~11일 실행 아티팩트 다운로드 및 압축 해제
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const { execSync } = require('child_process');
+
+            const runs = await github.rest.actions.listWorkflowRuns({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'daily_collector.yml',
+              per_page: 30
+            });
+
+            console.log(Found  runs);
+            for (const r of runs.data.workflow_runs) {
+              const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                run_id: r.id
+              });
+
+              for (const art of artifacts.data.artifacts) {
+                console.log(Downloading artifact:  (Run ID: )...);
+                try {
+                  const download = await github.rest.actions.downloadArtifact({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    artifact_id: art.id,
+                    archive_format: 'zip'
+                  });
+                  const zipPath = path.join(process.cwd(), rt__.zip);
+                  fs.writeFileSync(zipPath, Buffer.from(download.data));
+
+                  fs.mkdirSync(path.join(process.cwd(), 'out'), { recursive: true });
+                  execSync(unzip -o  -d out/);
+                  fs.unlinkSync(zipPath);
+                  console.log(Successfully extracted );
+                } catch (err) {
+                  console.error(Failed to download/extract :, err);
+                }
+              }
+            }
+
+      - name: 엑셀 파일 스캔 및 Firestore 동기화 스크립트 실행
+        run: |
+          node web/sync_all_history.mjs
+
+      - name: 변경된 로컬 데이터 커밋 및 푸시
+        run: |
+          git config --global user.name github-actions[bot]
+          git config --global user.email github-actions[bot]@users.noreply.github.com
+          git add out/
+          git commit -m Auto-sync: update historical backdata from 8th to 11th || echo No changes to commit
+          git push origin main || echo No push needed
