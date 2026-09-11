@@ -229,15 +229,15 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
     return null;
   };
 
-  // 라운드별 X축 상대 좌표 (11일 회차들을 시각적으로 가깝게 배치)
+  // 라운드별 X축 상대 좌표 (10일과 11일 사이는 일반 일자 간격과 동일하게, 11일 당일 회차들은 밀착 배치)
   const getRoundX = (label: string) => {
     if (label.includes('07일') || label.includes('7일')) return 0;
-    if (label.includes('08일') || label.includes('8일')) return 22;
-    if (label.includes('09일') || label.includes('9일')) return 44;
-    if (label.includes('10일') && label.includes('20시')) return 66;
-    if (label.includes('11일10시') || (label.includes('10시') && !label.includes('10일'))) return 77;
-    if (label.includes('14시')) return 84;
-    if (label.includes('15시')) return 91;
+    if (label.includes('08일') || label.includes('8일')) return 21;
+    if (label.includes('09일') || label.includes('9일')) return 42;
+    if (label.includes('10일') && label.includes('20시')) return 63;
+    if (label.includes('11일10시') || (label.includes('10시') && !label.includes('10일'))) return 84;
+    if (label.includes('14시')) return 89;
+    if (label.includes('15시')) return 94;
     if (label === '최종' || label.includes('최종')) return 100;
     return 50;
   };
