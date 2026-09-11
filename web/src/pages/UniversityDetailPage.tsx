@@ -273,15 +273,16 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
 
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
           {univ.rounds.map((r, idx) => {
-            // 1. Exact or intelligent date matching
+            // 1. Exact match first
             let snapIdx = snapshots.findIndex((s) => s.label === r.label);
+            // 2. Fallback for closing day rounds (10시, 15시, 최종)
             if (snapIdx === -1) {
-              const dateMatch = r.label.match(/(\d+월\d+일)/);
-              if (dateMatch) {
-                const datePrefix = dateMatch[1];
-                snapIdx = snapshots.findIndex(
-                  (s) => s.label.startsWith(datePrefix) || s.capturedAt.includes(datePrefix.replace('월', '-').replace('일', ''))
-                );
+              if (r.label.includes('15시')) {
+                snapIdx = snapshots.findIndex((s) => s.label.includes('14시') || s.label.includes('15시'));
+              } else if (r.label.includes('10시')) {
+                snapIdx = snapshots.findIndex((s) => s.label.includes('10시') && !s.label.includes('10일'));
+              } else if (r.label === '최종') {
+                snapIdx = snapshots.findIndex((s) => s.label === '최종' || s.label.includes('최종'));
               }
             }
 
@@ -306,7 +307,7 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
                 }`}
               >
                 <div className="text-xs font-bold truncate">
-                  {matchedSnap ? matchedSnap.label : r.label}
+                  {r.label}
                 </div>
                 <div className={`text-[10px] mt-0.5 font-mono ${isSelected ? 'text-blue-100 font-bold' : isCompleted ? 'text-emerald-400' : 'opacity-70'}`}>
                   {isCompleted
