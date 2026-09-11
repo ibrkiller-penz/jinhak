@@ -35,6 +35,7 @@ const DEFAULT_ROUNDS_GYODAE = [
   { label: '09월09일20시', scheduledAt: '2026-09-09T20:05:00+09:00', isFinal: false },
   { label: '09월10일20시', scheduledAt: '2026-09-10T20:05:00+09:00', isFinal: false },
   { label: '09월11일10시', scheduledAt: '2026-09-11T10:00:00+09:00', isFinal: false },
+  { label: '09월11일14시', scheduledAt: '2026-09-11T14:00:00+09:00', isFinal: false },
   { label: '09월11일15시', scheduledAt: '2026-09-11T15:00:00+09:00', isFinal: false },
   { label: '최종', scheduledAt: '2026-09-11T18:00:00+09:00', isFinal: true },
 ];
@@ -139,7 +140,7 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
             ratioUrl: meta?.ratioUrl || null,
             acceptStart: meta?.acceptStart || null,
             acceptEnd: meta?.acceptEnd || null,
-            rounds: meta?.rounds || (isTechUniv ? DEFAULT_ROUNDS_TECH : DEFAULT_ROUNDS_GYODAE),
+            rounds: isTechUniv ? (meta?.rounds || DEFAULT_ROUNDS_TECH) : DEFAULT_ROUNDS_GYODAE,
           },
           snapshots: snapshotsList,
         };
@@ -196,21 +197,41 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
       ? snapshots[activeSnapIndex]
       : null;
 
-  // 차트 데이터 변환 (상단 7개 일정 슬롯 고정 X축 생성, 최종은 비워둠)
-  const chartData = (univ.rounds || []).map((r) => {
-    // 1. Exact match first (최신 스냅샷 우선)
-    let snap = [...snapshots].reverse().find((s) => s.label === r.label);
+  // 스냅샷 매칭 헬퍼 함수
+  const findMatchingSnap = (roundLabel: string) => {
+    let snap = [...snapshots].reverse().find((s) => s.label === roundLabel);
+    if (snap) return snap;
 
-    // 2. Fallback for closing day rounds (10시, 14/15시, 최종)
-    if (!snap) {
-      if (r.label.includes('15시') || r.label.includes('14시')) {
-        snap = [...snapshots].reverse().find((s) => s.label.includes('14시') || s.label.includes('15시'));
-      } else if (r.label.includes('10시')) {
-        snap = [...snapshots].reverse().find((s) => s.label.includes('10시') && !s.label.includes('10일'));
-      } else if (r.label === '최종') {
-        snap = [...snapshots].reverse().find((s) => s.label === '최종' || s.label.includes('최종'));
-      }
+    if (roundLabel.includes('14시')) {
+      return [...snapshots].reverse().find((s) => s.label.includes('14시'));
     }
+    if (roundLabel.includes('15시')) {
+      return [...snapshots].reverse().find((s) => s.label.includes('15시'));
+    }
+    if (roundLabel.includes('10시')) {
+      return [...snapshots].reverse().find((s) => s.label.includes('10시') && !s.label.includes('10일'));
+    }
+    if (roundLabel.includes('07일') || roundLabel.includes('7일')) {
+      return [...snapshots].reverse().find((s) => s.label.includes('07일') || s.label.includes('7일'));
+    }
+    if (roundLabel.includes('08일') || roundLabel.includes('8일')) {
+      return [...snapshots].reverse().find((s) => s.label.includes('08일') || s.label.includes('8일'));
+    }
+    if (roundLabel.includes('09일') || roundLabel.includes('9일')) {
+      return [...snapshots].reverse().find((s) => s.label.includes('09일') || s.label.includes('9일'));
+    }
+    if (roundLabel.includes('10일')) {
+      return [...snapshots].reverse().find((s) => s.label.includes('10일'));
+    }
+    if (roundLabel === '최종') {
+      return [...snapshots].reverse().find((s) => s.label === '최종' || s.label.includes('최종'));
+    }
+    return null;
+  };
+
+  // 차트 데이터 변환 (상단 8개 일정 슬롯 고정 X축 생성, 최종은 비워둠)
+  const chartData = (univ.rounds || []).map((r) => {
+    const snap = findMatchingSnap(r.label);
 
     let rVal: number | null = null;
     if (snap && !r.isFinal && snap.summary?.ratio) {
@@ -288,22 +309,10 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
           </span>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2">
           {univ.rounds.map((r, idx) => {
-            // 1. Exact match first
-            let snapIdx = snapshots.findIndex((s) => s.label === r.label);
-            // 2. Fallback for closing day rounds (10시, 15시, 최종)
-            if (snapIdx === -1) {
-              if (r.label.includes('15시')) {
-                snapIdx = snapshots.findIndex((s) => s.label.includes('14시') || s.label.includes('15시'));
-              } else if (r.label.includes('10시')) {
-                snapIdx = snapshots.findIndex((s) => s.label.includes('10시') && !s.label.includes('10일'));
-              } else if (r.label === '최종') {
-                snapIdx = snapshots.findIndex((s) => s.label === '최종' || s.label.includes('최종'));
-              }
-            }
-
-            const matchedSnap = snapIdx !== -1 ? snapshots[snapIdx] : null;
+            const matchedSnap = findMatchingSnap(r.label);
+            const snapIdx = matchedSnap ? snapshots.indexOf(matchedSnap) : -1;
             const isCompleted = !!matchedSnap;
             const isSelected = matchedSnap && activeSnapIndex === snapIdx;
 
@@ -311,7 +320,7 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
               <div
                 key={idx}
                 onClick={() => {
-                  if (matchedSnap) setSelectedSnapIndex(snapIdx);
+                  if (matchedSnap && snapIdx !== -1) setSelectedSnapIndex(snapIdx);
                 }}
                 className={`p-2.5 rounded-xl border text-center transition-all ${
                   isCompleted ? 'cursor-pointer hover:scale-[1.02]' : 'cursor-default'
@@ -328,7 +337,7 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
                 </div>
                 <div className={`text-[10px] mt-0.5 font-mono ${isSelected ? 'text-blue-100 font-bold' : isCompleted ? 'text-emerald-400' : 'opacity-70'}`}>
                   {isCompleted
-                    ? `${matchedSnap.summary?.ratio || '수집완료'}`
+                    ? `${matchedSnap?.summary?.ratio || '수집완료'}`
                     : '예정'}
                 </div>
               </div>

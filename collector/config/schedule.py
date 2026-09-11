@@ -45,12 +45,14 @@ def generate_rounds(univ: University) -> list[CollectionRound]:
                 label = f"{curr.month:02d}월{curr.day:02d}일20시"
                 rounds.append(CollectionRound(label=label, scheduled_at=dt_20))
         else:
-            # 마감일: 10시, 15시, 최종
+            # 마감일: 10시, 14시, 15시, 최종
             dt_10 = datetime.combine(curr, time(10, 0), tzinfo=KST)
+            dt_14 = datetime.combine(curr, time(14, 0), tzinfo=KST)
             dt_15 = datetime.combine(curr, time(15, 0), tzinfo=KST)
             dt_final = datetime.combine(curr, time(18, 0), tzinfo=KST)
 
             rounds.append(CollectionRound(label=f"{curr.month:02d}월{curr.day:02d}일10시", scheduled_at=dt_10))
+            rounds.append(CollectionRound(label=f"{curr.month:02d}월{curr.day:02d}일14시", scheduled_at=dt_14))
             rounds.append(CollectionRound(label=f"{curr.month:02d}월{curr.day:02d}일15시", scheduled_at=dt_15))
             rounds.append(CollectionRound(label="최종", scheduled_at=dt_final, is_final=True, is_manual=True))
         curr += timedelta(days=1)

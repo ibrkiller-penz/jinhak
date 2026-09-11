@@ -121,7 +121,7 @@ export const ManualCollectPage: React.FC<ManualCollectPageProps> = ({
               className="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 font-mono"
             />
             <div className="flex gap-1.5 flex-wrap">
-              {['09월07일20시', '09월11일10시', '09월11일15시', '최종'].map((preset) => (
+              {['09월07일20시', '09월08일20시', '09월09일20시', '09월10일20시', '09월11일10시', '09월11일14시', '09월11일15시', '최종'].map((preset) => (
                 <button
                   key={preset}
                   type="button"
