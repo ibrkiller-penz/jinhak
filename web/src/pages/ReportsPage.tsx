@@ -96,7 +96,7 @@ export const ReportsPage: React.FC = () => {
               마스터 엑셀 다운로드 (1.37MB)
             </a>
             <a
-              href="https://drive.google.com/drive/folders/1ojzq2jTjMmSpiGqqQCb-RapXmGmgk71e"
+              href="https://drive.google.com/drive/folders/1WmHB5_EqiZklq6kRnMXDn_kfbNXAD61j"
               target="_blank"
               rel="noreferrer"
               className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-md cursor-pointer"

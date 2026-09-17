@@ -178,7 +178,7 @@ export const App: React.FC = () => {
         serverTime={serverTime}
         onRefresh={fetchStatusAndUnivs}
         onOpenDrive={() => {
-          setDriveTargetUrl('https://drive.google.com/drive/folders/1ojzq2jTjMmSpiGqqQCb-RapXmGmgk71e');
+          setDriveTargetUrl('https://drive.google.com/drive/folders/1WmHB5_EqiZklq6kRnMXDn_kfbNXAD61j');
           setIsDriveModalOpen(true);
         }}
       />
