@@ -62,39 +62,47 @@ export const ReportsPage: React.FC = () => {
       </div>
 
       {/* 1. Master Report Direct Banner */}
-      <div className="bg-gradient-to-r from-blue-900/40 via-indigo-900/40 to-slate-900/60 p-6 rounded-2xl border border-blue-500/30 shadow-xl space-y-4">
+      <div className="bg-gradient-to-r from-blue-900/50 via-indigo-900/50 to-slate-900/70 p-6 rounded-2xl border border-blue-500/40 shadow-xl space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center border border-emerald-500/30 shrink-0">
               <FileSpreadsheet className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-white flex items-center gap-2">
-                2027학년도 수시 교대 경쟁률 취합보고서 (최신 통합 마스터본)
-              </h4>
+              <div className="flex items-center gap-2">
+                <h4 className="text-base font-bold text-white">
+                  2027학년도 전국 대학 수시모집 경쟁률 마스터 취합 보고서
+                </h4>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold">
+                  최신 1.37 MB
+                </span>
+              </div>
               <p className="text-xs text-slate-300 mt-1">
-                9월 7일부터 9월 11일 마감 회차까지 17개 대학(교대 11개교 + 과기원 6개교)의 전형별 지원인원 및 경쟁률 추이가 시트별로 취합된 통합 엑셀 문서입니다.
+                전국 246개 대학(캠퍼스) 및 33,541개 전체 세부 학과가 총괄/4년제/전문대/교대/과기원/모집단위별 시트로 완벽 취합된 통합 엑셀 문서입니다.
+              </p>
+              <p className="text-[11px] text-blue-300 font-mono mt-1">
+                📂 로컬 저장 경로: C:\Users\pc\Desktop\2027_수시모집_전국대학_경쟁률_취합결과_09월17일16시
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-2.5 flex-wrap shrink-0">
             <a
-              href="/2027대입_수시모집경쟁률취합_정보분석3팀_교대_최신.xlsx"
-              download="2027대입_수시모집경쟁률취합_정보분석3팀_교대_최신.xlsx"
-              className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-md cursor-pointer"
+              href="/2027학년도_수시모집_전국대학_경쟁률취합_정보분석3팀_최신.xlsx"
+              download="2027학년도_수시모집_전국대학_경쟁률취합_정보분석3팀_최신.xlsx"
+              className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-lg shadow-emerald-600/20 cursor-pointer"
             >
               <Download className="w-4 h-4" />
-              최신 취합 엑셀 다운로드
+              마스터 엑셀 다운로드 (1.37MB)
             </a>
             <a
-              href="https://drive.google.com/drive/u/0/folders/1WmHB5_EqiZklq6kRnMXDn_kfbNXAD61j"
+              href="https://drive.google.com/drive/folders/1ojzq2jTjMmSpiGqqQCb-RapXmGmgk71e"
               target="_blank"
               rel="noreferrer"
               className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-md cursor-pointer"
             >
               <Download className="w-4 h-4" />
-              구글 드라이브 열기 (암호: 1004)
+              구글 드라이브 열기 (최신 취합 폴더)
             </a>
           </div>
         </div>
