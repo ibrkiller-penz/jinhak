@@ -184,7 +184,7 @@ export const App: React.FC = () => {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="flex-1 max-w-[1920px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {currentTab === 'dashboard' && (
           <DashboardPage
             universities={universities}
@@ -220,7 +220,7 @@ export const App: React.FC = () => {
 
       {/* Footer */}
       <footer className="border-t border-slate-900 bg-slate-950/80 py-6 text-center text-xs text-slate-500">
-        <p>2027학년도 수시모집 교대 경쟁률 취합 자동화 시스템 • 정보분석3팀</p>
+        <p>2027학년도 전국 대학 수시모집 경쟁률 취합 시스템 • 정보분석3팀</p>
       </footer>
 
       {/* Capture Preview Modal */}

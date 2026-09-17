@@ -21,7 +21,7 @@ interface DashboardPageProps {
   isCollecting: boolean;
 }
 
-const ITEMS_PER_PAGE = 24;
+const ITEMS_PER_PAGE = 32;
 
 export const DashboardPage: React.FC<DashboardPageProps> = ({
   universities,
@@ -333,7 +333,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
           <p className="text-xs">다른 검색어를 입력하시거나 필터를 초기화해 보세요.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-8 gap-3">
           {paginatedUnivs.map((univ) => (
             <UniversityCard
               key={univ.key}

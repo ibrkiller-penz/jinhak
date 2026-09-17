@@ -20,7 +20,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   return (
     <header className="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Brand Logo & Title */}
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => setCurrentTab('dashboard')}>
@@ -29,12 +29,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-bold text-lg text-white tracking-tight">2027 수시 교대 경쟁률</span>
+                <span className="font-bold text-lg text-white tracking-tight">2027 수시 경쟁률</span>
                 <span className="text-xs bg-blue-500/20 text-blue-400 font-medium px-2 py-0.5 rounded-full border border-blue-500/30">
                   정보분석3팀
                 </span>
               </div>
-              <p className="text-xs text-slate-400">실시간 자동 수집 & 취합 시스템</p>
+              <p className="text-xs text-slate-400">전국 대학 실시간 경쟁률 현황</p>
             </div>
           </div>
 
