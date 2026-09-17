@@ -57,6 +57,7 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<'table' | 'chart' | 'captures'>('table');
   const [selectedSnapIndex, setSelectedSnapIndex] = useState<number | null>(null);
+  const [deptSearch, setDeptSearch] = useState('');
 
   useEffect(() => {
     let isMounted = true;
@@ -79,7 +80,7 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
         // Fallback to Firestore
       }
 
-      // 2. Cloud Firestore Direct Fetch
+      // 2. Cloud Firestore Direct Fetch (교대 / 과기원 상세 이력)
       try {
         const docRef = doc(db, '교대경쟁률', univKey);
         const docSnap = await getDoc(docRef);
@@ -100,7 +101,7 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
             }
           }
           snapshotsList.push({
-            label: s.label || '09월07일20시',
+            label: s.label || '최종',
             capturedAt: s.capturedAt || '',
             status: s.status || 'ok',
             notice: s.notice || null,
@@ -114,44 +115,76 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
         // 시간순 정렬
         snapshotsList.sort((a, b) => (a.capturedAt > b.capturedAt ? 1 : -1));
 
-        // If no snapshots but lastSnapshot exists
-        if (snapshotsList.length === 0 && meta?.lastSnapshot) {
-          snapshotsList.push({
-            label: meta.lastSnapshot.label || '09월07일20시',
-            capturedAt: meta.lastSnapshot.capturedAt || new Date().toISOString(),
-            status: meta.lastSnapshot.status || 'ok',
-            notice: meta.lastSnapshot.notice || null,
-            summary: meta.lastSnapshot.summary || {
-              ratio: meta.lastSnapshot.ratio || '-',
-              mojip: meta.lastSnapshot.mojip || 0,
-              jiwon: meta.lastSnapshot.jiwon || 0,
+        if (snapshotsList.length > 0 || meta) {
+          const isTechUniv = ['DGIST', 'GIST', 'KAIST', 'KENTECH', 'POSTECH', 'UNIST'].includes(univKey);
+          const detail: UniversityDetail = {
+            university: {
+              key: univKey,
+              fullName: meta?.fullName || univKey,
+              platform: meta?.platform || 'jinhakapply',
+              ratioUrl: meta?.ratioUrl || null,
+              acceptStart: meta?.acceptStart || null,
+              acceptEnd: meta?.acceptEnd || null,
+              rounds: isTechUniv ? (meta?.rounds || DEFAULT_ROUNDS_TECH) : DEFAULT_ROUNDS_GYODAE,
             },
-            tables: [],
-          });
-        }
+            snapshots: snapshotsList,
+          };
 
-        const isTechUniv = ['DGIST', 'GIST', 'KAIST', 'KENTECH', 'POSTECH', 'UNIST'].includes(univKey);
-
-        const detail: UniversityDetail = {
-          university: {
-            key: univKey,
-            fullName: meta?.fullName || univKey,
-            platform: meta?.platform || 'uwayapply',
-            ratioUrl: meta?.ratioUrl || null,
-            acceptStart: meta?.acceptStart || null,
-            acceptEnd: meta?.acceptEnd || null,
-            rounds: isTechUniv ? (meta?.rounds || DEFAULT_ROUNDS_TECH) : DEFAULT_ROUNDS_GYODAE,
-          },
-          snapshots: snapshotsList,
-        };
-
-        if (isMounted) {
-          setData(detail);
-          setLoading(false);
+          if (isMounted) {
+            setData(detail);
+            setLoading(false);
+            return;
+          }
         }
       } catch (err) {
-        console.error('Firestore snapshot loading error:', err);
-        if (isMounted) setLoading(false);
+        console.warn('Firestore snapshot loading error:', err);
+      }
+
+      // 3. Fallback to /data/univs/ (전국 246개 대학 전체 데이터)
+      try {
+        const safeKey = univKey.replace(/\//g, '_').replace(/\\/g, '_').replace(/:/g, '_');
+        const resJson = await fetch(`/data/univs/${encodeURIComponent(safeKey)}.json`);
+        if (resJson.ok) {
+          const uData = await resJson.json();
+          if (isMounted && uData) {
+            const detail: UniversityDetail = {
+              university: {
+                key: uData.key,
+                fullName: uData.fullName || uData.key,
+                platform: uData.platform || 'jinhakapply',
+                ratioUrl: uData.ratioUrl || null,
+                acceptStart: null,
+                acceptEnd: null,
+                rounds: [
+                  { label: '최종', scheduledAt: '', isFinal: true }
+                ],
+              },
+              snapshots: [
+                {
+                  label: '최종',
+                  capturedAt: new Date().toISOString(),
+                  status: 'ok',
+                  notice: null,
+                  summary: {
+                    mojip: uData.totalCapacity || 0,
+                    jiwon: uData.totalApplicants || 0,
+                    ratio: uData.ratio || '-',
+                  },
+                  tables: uData.tables || [],
+                }
+              ],
+            };
+            setData(detail);
+            setLoading(false);
+            return;
+          }
+        }
+      } catch (e) {
+        console.error('Static university data fetch error:', e);
+      }
+
+      if (isMounted) {
+        setLoading(false);
       }
     }
 
@@ -293,73 +326,75 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
               href={univ.ratioUrl}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-medium rounded-xl border border-slate-600 transition"
+              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-bold rounded-xl shadow-md shadow-blue-500/25 transition"
             >
-              <ExternalLink className="w-3.5 h-3.5" />
-              실시간 사이트
+              <ExternalLink className="w-4 h-4" />
+              공식 출처 실시간 페이지에서 확인 →
             </a>
           )}
           {currentSnapshot && currentSnapshot.xlsxUrl && (
             <a
               href={currentSnapshot.xlsxUrl}
               download
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 text-xs font-medium rounded-xl border border-emerald-500/30 transition"
+              className="flex items-center gap-1.5 px-3.5 py-2 bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 text-xs font-bold rounded-xl border border-emerald-500/30 transition"
             >
-              <FileSpreadsheet className="w-3.5 h-3.5" />
-              {currentSnapshot.label} 백데이터 다운로드
+              <FileSpreadsheet className="w-4 h-4" />
+              백데이터 다운로드
             </a>
           )}
         </div>
       </div>
 
-      {/* Schedule Rounds Progress Milestone */}
-      <div className="bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60">
-        <div className="flex items-center justify-between mb-3">
-          <h4 className="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
-            <Calendar className="w-4 h-4 text-blue-400" />
-            수집 일정 진행 현황 (회차를 클릭하면 해당 시점의 데이터로 전환됩니다)
-          </h4>
-          <span className="text-[11px] text-blue-400 font-medium">
-            총 {snapshots.length}개 회차 수집 완료
-          </span>
-        </div>
+      {/* Schedule Rounds Progress Milestone (교대 / 과기원 등 복수 회차 관리 대학만 표시) */}
+      {univ.rounds && univ.rounds.length > 1 && (
+        <div className="bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60">
+          <div className="flex items-center justify-between mb-3">
+            <h4 className="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
+              <Calendar className="w-4 h-4 text-blue-400" />
+              수집 일정 진행 현황 (회차를 클릭하면 해당 시점의 데이터로 전환됩니다)
+            </h4>
+            <span className="text-[11px] text-blue-400 font-medium">
+              총 {snapshots.length}개 회차 수집 완료
+            </span>
+          </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2">
-          {univ.rounds.map((r, idx) => {
-            const matchedSnap = findMatchingSnap(r.label);
-            const snapIdx = matchedSnap ? snapshots.indexOf(matchedSnap) : -1;
-            const isCompleted = !!matchedSnap;
-            const isSelected = matchedSnap && activeSnapIndex === snapIdx;
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2">
+            {univ.rounds.map((r, idx) => {
+              const matchedSnap = findMatchingSnap(r.label);
+              const snapIdx = matchedSnap ? snapshots.indexOf(matchedSnap) : -1;
+              const isCompleted = !!matchedSnap;
+              const isSelected = matchedSnap && activeSnapIndex === snapIdx;
 
-            return (
-              <div
-                key={idx}
-                onClick={() => {
-                  if (matchedSnap && snapIdx !== -1) setSelectedSnapIndex(snapIdx);
-                }}
-                className={`p-2.5 rounded-xl border text-center transition-all ${
-                  isCompleted ? 'cursor-pointer hover:scale-[1.02]' : 'cursor-default'
-                } ${
-                  isSelected
-                    ? 'bg-blue-600 border-blue-400 text-white shadow-lg shadow-blue-500/30 ring-2 ring-blue-400'
-                    : isCompleted
-                    ? 'bg-blue-600/20 border-blue-500/40 text-blue-300 hover:bg-blue-600/30'
-                    : 'bg-slate-900/40 border-slate-800 text-slate-500'
-                }`}
-              >
-                <div className="text-xs font-bold truncate">
-                  {r.label}
+              return (
+                <div
+                  key={idx}
+                  onClick={() => {
+                    if (matchedSnap && snapIdx !== -1) setSelectedSnapIndex(snapIdx);
+                  }}
+                  className={`p-2.5 rounded-xl border text-center transition-all ${
+                    isCompleted ? 'cursor-pointer hover:scale-[1.02]' : 'cursor-default'
+                  } ${
+                    isSelected
+                      ? 'bg-blue-600 border-blue-400 text-white shadow-lg shadow-blue-500/30 ring-2 ring-blue-400'
+                      : isCompleted
+                      ? 'bg-blue-600/20 border-blue-500/40 text-blue-300 hover:bg-blue-600/30'
+                      : 'bg-slate-900/40 border-slate-800 text-slate-500'
+                  }`}
+                >
+                  <div className="text-xs font-bold truncate">
+                    {r.label}
+                  </div>
+                  <div className={`text-[10px] mt-0.5 font-mono ${isSelected ? 'text-blue-100 font-bold' : isCompleted ? 'text-emerald-400' : 'opacity-70'}`}>
+                    {isCompleted
+                      ? `${matchedSnap?.summary?.ratio || '수집완료'}`
+                      : '예정'}
+                  </div>
                 </div>
-                <div className={`text-[10px] mt-0.5 font-mono ${isSelected ? 'text-blue-100 font-bold' : isCompleted ? 'text-emerald-400' : 'opacity-70'}`}>
-                  {isCompleted
-                    ? `${matchedSnap?.summary?.ratio || '수집완료'}`
-                    : '예정'}
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* View Tabs */}
       <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
@@ -374,42 +409,46 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
           <TableIcon className="w-4 h-4" />
           와이드 시트 표
         </button>
-        <button
-          onClick={() => setActiveTab('chart')}
-          className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-            activeTab === 'chart'
-              ? 'bg-blue-600 text-white shadow'
-              : 'text-slate-400 hover:text-white hover:bg-slate-800'
-          }`}
-        >
-          <BarChart className="w-4 h-4" />
-          경쟁률 추이 차트
-        </button>
-        <button
-          onClick={() => setActiveTab('captures')}
-          className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-            activeTab === 'captures'
-              ? 'bg-blue-600 text-white shadow'
-              : 'text-slate-400 hover:text-white hover:bg-slate-800'
-          }`}
-        >
-          <Camera className="w-4 h-4" />
-          증빙 캡쳐 갤러리 ({snapshots.length})
-        </button>
+        {snapshots.length > 1 && (
+          <button
+            onClick={() => setActiveTab('chart')}
+            className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              activeTab === 'chart'
+                ? 'bg-blue-600 text-white shadow'
+                : 'text-slate-400 hover:text-white hover:bg-slate-800'
+            }`}
+          >
+            <BarChart className="w-4 h-4" />
+            경쟁률 추이 차트
+          </button>
+        )}
+        {snapshots.some((s) => s.captureUrl) && (
+          <button
+            onClick={() => setActiveTab('captures')}
+            className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+              activeTab === 'captures'
+                ? 'bg-blue-600 text-white shadow'
+                : 'text-slate-400 hover:text-white hover:bg-slate-800'
+            }`}
+          >
+            <Camera className="w-4 h-4" />
+            증빙 캡쳐 갤러리 ({snapshots.filter((s) => s.captureUrl).length})
+          </button>
+        )}
       </div>
 
       {/* Tab 1: Wide Table Preview */}
       {activeTab === 'table' && (
         <div className="bg-slate-800/80 rounded-2xl border border-slate-700/80 p-5 overflow-hidden shadow-lg space-y-4">
-          {/* Snapshot selector header */}
-          {snapshots.length > 0 && currentSnapshot && (
-            <div className="flex flex-wrap items-center justify-between gap-3 bg-slate-900/80 p-3.5 rounded-xl border border-slate-700">
+          {/* Snapshot selector header & Department search */}
+          <div className="flex flex-wrap items-center justify-between gap-3 bg-slate-900/80 p-3.5 rounded-xl border border-slate-700">
+            {snapshots.length > 1 ? (
               <div className="flex items-center gap-2">
                 <span className="text-xs font-bold text-slate-300">조회 회차:</span>
                 <select
                   value={activeSnapIndex}
                   onChange={(e) => setSelectedSnapIndex(Number(e.target.value))}
-                  className="bg-slate-800 border border-slate-700 text-white text-xs font-bold rounded-lg px-3 py-1.5 focus:outline-none focus:border-blue-500"
+                  className="bg-slate-800 border border-slate-700 text-white text-xs font-bold rounded-lg px-3 py-1.5 focus:outline-none focus:border-blue-500 cursor-pointer"
                 >
                   {snapshots.map((s, sIdx) => (
                     <option key={sIdx} value={sIdx}>
@@ -418,75 +457,117 @@ export const UniversityDetailPage: React.FC<UniversityDetailPageProps> = ({
                   ))}
                 </select>
               </div>
-
-              <div className="flex items-center gap-3 text-xs">
-                <span className="text-slate-400">
-                  모집: <strong className="text-white font-mono">{currentSnapshot.summary?.mojip || 0}명</strong>
-                </span>
-                <span className="text-slate-400">
-                  지원: <strong className="text-emerald-400 font-mono">{currentSnapshot.summary?.jiwon || 0}명</strong>
-                </span>
-                <span className="text-slate-400">
-                  총 경쟁률: <strong className="text-blue-400 font-mono font-bold text-sm">{currentSnapshot.summary?.ratio || '-'}</strong>
-                </span>
+            ) : (
+              <div className="text-xs text-slate-300 font-bold">
+                2027학년도 수시 모집단위별 현황
               </div>
+            )}
+
+            <div className="flex items-center gap-3">
+              {/* Dept search filter */}
+              <div className="relative w-48 sm:w-60">
+                <input
+                  type="text"
+                  placeholder="전형명, 모집단위 검색..."
+                  value={deptSearch}
+                  onChange={(e) => setDeptSearch(e.target.value)}
+                  className="w-full bg-slate-800 border border-slate-700 text-xs text-white px-3 py-1.5 rounded-lg focus:outline-none focus:border-blue-500"
+                />
+              </div>
+
+              {currentSnapshot && (
+                <div className="hidden sm:flex items-center gap-3 text-xs">
+                  <span className="text-slate-400">
+                    모집: <strong className="text-white font-mono">{currentSnapshot.summary?.mojip?.toLocaleString() || 0}명</strong>
+                  </span>
+                  <span className="text-slate-400">
+                    지원: <strong className="text-emerald-400 font-mono">{currentSnapshot.summary?.jiwon?.toLocaleString() || 0}명</strong>
+                  </span>
+                  <span className="text-slate-400">
+                    총 경쟁률: <strong className="text-blue-400 font-mono font-bold text-sm">{currentSnapshot.summary?.ratio || '-'}</strong>
+                  </span>
+                </div>
+              )}
             </div>
-          )}
+          </div>
 
           {!currentSnapshot || !currentSnapshot.tables || currentSnapshot.tables.length === 0 ? (
             <p className="text-center py-12 text-sm text-slate-400">
-              아직 수집된 스냅샷 데이터가 없습니다. 상단의 '수동 실행' 탭에서 첫 회차 수집을 실행해 보세요.
+              아직 수집된 스냅샷 데이터가 없습니다.
             </p>
           ) : (
             <div className="space-y-6">
-              {currentSnapshot.tables.map((table, tIdx) => (
-                <div key={tIdx} className="space-y-2">
-                  {table.title && (
-                    <h5 className="font-bold text-sm text-amber-300 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-amber-400"></span>
-                      {table.title}
-                    </h5>
-                  )}
-                  <div className="overflow-x-auto rounded-xl border border-slate-700">
-                    <table className="w-full text-xs text-left text-slate-200 divide-y divide-slate-700">
-                      <thead className="bg-slate-900 text-slate-300 font-semibold uppercase">
-                        <tr>
-                          {table.rows[0]?.map((col, cIdx) => (
-                            <th key={cIdx} className="px-3.5 py-2.5 whitespace-nowrap bg-slate-900/90">
-                              {col}
-                            </th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-slate-800 bg-slate-900/40 font-mono">
-                        {table.rows.slice(1).map((row, rIdx) => {
-                          const isTotalRow =
-                            row[0]?.includes('총계') || row[0]?.includes('합계');
-                          return (
-                            <tr
-                              key={rIdx}
-                              className={`hover:bg-slate-800/60 transition ${
-                                isTotalRow
-                                  ? 'bg-blue-500/10 font-bold text-blue-200'
-                                  : ''
-                              }`}
-                            >
-                              {row.map((cell, cIdx) => (
-                                <td
-                                  key={cIdx}
-                                  className="px-3.5 py-2 whitespace-nowrap text-slate-300"
-                                >
-                                  {cell || '-'}
-                                </td>
-                              ))}
+              {currentSnapshot.tables.map((table, tIdx) => {
+                const headerRow = table.rows[0] || [];
+                const dataRows = table.rows.slice(1);
+                const filteredDataRows = deptSearch.trim()
+                  ? dataRows.filter((r) =>
+                      r.some((c) => String(c).toLowerCase().includes(deptSearch.toLowerCase()))
+                    )
+                  : dataRows;
+
+                return (
+                  <div key={tIdx} className="space-y-2">
+                    {table.title && (
+                      <div className="flex items-center justify-between">
+                        <h5 className="font-bold text-sm text-amber-300 flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-amber-400"></span>
+                          {table.title}
+                        </h5>
+                        <span className="text-xs text-slate-400">
+                          ({filteredDataRows.length}개 항목)
+                        </span>
+                      </div>
+                    )}
+                    <div className="overflow-x-auto rounded-xl border border-slate-700">
+                      <table className="w-full text-xs text-left text-slate-200 divide-y divide-slate-700">
+                        <thead className="bg-slate-900 text-slate-300 font-semibold uppercase">
+                          <tr>
+                            {headerRow.map((col, cIdx) => (
+                              <th key={cIdx} className="px-3.5 py-2.5 whitespace-nowrap bg-slate-900/90">
+                                {col}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-slate-800 bg-slate-900/40 font-mono">
+                          {filteredDataRows.length === 0 ? (
+                            <tr>
+                              <td colSpan={headerRow.length || 1} className="py-6 text-center text-slate-500">
+                                일치하는 모집단위가 없습니다.
+                              </td>
                             </tr>
-                          );
-                        })}
-                      </tbody>
-                    </table>
+                          ) : (
+                            filteredDataRows.map((row, rIdx) => {
+                              const isTotalRow =
+                                row[0]?.includes('총계') || row[0]?.includes('합계') || row[1]?.includes('총계');
+                              return (
+                                <tr
+                                  key={rIdx}
+                                  className={`hover:bg-slate-800/60 transition ${
+                                    isTotalRow
+                                      ? 'bg-blue-500/10 font-bold text-blue-200'
+                                      : ''
+                                  }`}
+                                >
+                                  {row.map((cell, cIdx) => (
+                                    <td
+                                      key={cIdx}
+                                      className="px-3.5 py-2 whitespace-nowrap text-slate-300"
+                                    >
+                                      {cell || '-'}
+                                    </td>
+                                  ))}
+                                </tr>
+                              );
+                            })
+                          )}
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>

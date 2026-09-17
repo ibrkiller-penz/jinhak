@@ -2,6 +2,11 @@ export interface University {
   key: string;
   fullName: string;
   region: string;
+  regions?: string[];
+  category?: '교대' | '과기원/특수대' | '4년제' | '전문대' | string;
+  univType?: string;
+  deptCount?: number;
+  campus?: string | null;
   platform: 'jinhakapply' | 'uwayapply' | string;
   ratioUrl: string | null;
   acceptStart: string | null;

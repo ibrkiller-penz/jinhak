@@ -1,0 +1,4480 @@
+{
+  "updated_at": "2026-09-16T20:34:07.368494+09:00",
+  "total_universities": 246,
+  "total_departments": 33541,
+  "universities": [
+    {
+      "key": "건국대학교 (서울)",
+      "univId": "konkuk-seoul",
+      "university": "건국대학교",
+      "campus": "서울",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10080151.html",
+      "totalCapacity": 1929,
+      "totalApplicants": 49682,
+      "deptCount": 242,
+      "ratio": "25.76 : 1",
+      "ratioNum": 25.76
+    },
+    {
+      "key": "건국대학교 (글로컬(충주))",
+      "univId": "konkuk-glocal",
+      "university": "건국대학교",
+      "campus": "글로컬(충주)",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10091341.html",
+      "totalCapacity": 1475,
+      "totalApplicants": 14549,
+      "deptCount": 154,
+      "ratio": "9.86 : 1",
+      "ratioNum": 9.86
+    },
+    {
+      "key": "한양대학교 (서울)",
+      "univId": "hanyang-seoul",
+      "university": "한양대학교",
+      "campus": "서울",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11640591.html",
+      "totalCapacity": 1921,
+      "totalApplicants": 58721,
+      "deptCount": 258,
+      "ratio": "30.57 : 1",
+      "ratioNum": 30.57
+    },
+    {
+      "key": "홍익대학교 (서울)",
+      "univId": "hongik-seoul",
+      "university": "홍익대학교",
+      "campus": "서울",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11720891.html",
+      "totalCapacity": 1783,
+      "totalApplicants": 27513,
+      "deptCount": 163,
+      "ratio": "15.43 : 1",
+      "ratioNum": 15.43
+    },
+    {
+      "key": "동국대학교 (서울)",
+      "univId": "dongguk-seoul",
+      "university": "동국대학교",
+      "campus": "서울",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10550541.html",
+      "totalCapacity": 1915,
+      "totalApplicants": 40884,
+      "deptCount": 255,
+      "ratio": "21.35 : 1",
+      "ratioNum": 21.35
+    },
+    {
+      "key": "서강대학교 (서울)",
+      "univId": "sogang-seoul",
+      "university": "서강대학교",
+      "campus": "서울",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio12050481.html",
+      "totalCapacity": 1044,
+      "totalApplicants": 33729,
+      "deptCount": 99,
+      "ratio": "32.31 : 1",
+      "ratioNum": 32.31
+    },
+    {
+      "key": "이화여자대학교 (서울)",
+      "univId": "ewha-seoul",
+      "university": "이화여자대학교",
+      "campus": "서울",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11202121.html",
+      "totalCapacity": 2083,
+      "totalApplicants": 32211,
+      "deptCount": 258,
+      "ratio": "15.46 : 1",
+      "ratioNum": 15.46
+    },
+    {
+      "key": "연세대학교 (서울)",
+      "univId": "yonsei-seoul",
+      "university": "연세대학교",
+      "campus": "서울",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11080811.html",
+      "totalCapacity": 2191,
+      "totalApplicants": 30569,
+      "deptCount": 254,
+      "ratio": "13.95 : 1",
+      "ratioNum": 13.95
+    },
+    {
+      "key": "성균관대학교 (서울)",
+      "univId": "skku-seoul",
+      "university": "성균관대학교",
+      "campus": "서울",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10920591.html",
+      "totalCapacity": 439,
+      "totalApplicants": 3518,
+      "deptCount": 52,
+      "ratio": "8.01 : 1",
+      "ratioNum": 8.01
+    },
+    {
+      "key": "경민대학교",
+      "univId": "gyeongmin",
+      "university": "경민대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio40120531.html",
+      "totalCapacity": 1204,
+      "totalApplicants": 2505,
+      "deptCount": 96,
+      "ratio": "2.08 : 1",
+      "ratioNum": 2.08
+    },
+    {
+      "key": "경복대학교",
+      "univId": "gyeongbok",
+      "university": "경복대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio40130831.html",
+      "totalCapacity": 1478,
+      "totalApplicants": 3837,
+      "deptCount": 151,
+      "ratio": "2.60 : 1",
+      "ratioNum": 2.6
+    },
+    {
+      "key": "경인여자대학교",
+      "univId": "gyeongin-women",
+      "university": "경인여자대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "인천"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio40180721.html",
+      "totalCapacity": 970,
+      "totalApplicants": 3480,
+      "deptCount": 81,
+      "ratio": "3.59 : 1",
+      "ratioNum": 3.59
+    },
+    {
+      "key": "국립한국농수산대학교",
+      "univId": "knau",
+      "university": "국립한국농수산대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "전북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio41700211.html",
+      "totalCapacity": 432,
+      "totalApplicants": 793,
+      "deptCount": 72,
+      "ratio": "1.84 : 1",
+      "ratioNum": 1.84
+    },
+    {
+      "key": "동양미래대학교",
+      "univId": "dongyang-mirae",
+      "university": "동양미래대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio40580411.html",
+      "totalCapacity": 1722,
+      "totalApplicants": 3712,
+      "deptCount": 176,
+      "ratio": "2.16 : 1",
+      "ratioNum": 2.16
+    },
+    {
+      "key": "배화여자대학교",
+      "univId": "baewha-women",
+      "university": "배화여자대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio40680671.html",
+      "totalCapacity": 781,
+      "totalApplicants": 1931,
+      "deptCount": 113,
+      "ratio": "2.47 : 1",
+      "ratioNum": 2.47
+    },
+    {
+      "key": "백제예술대학교",
+      "univId": "baekje-arts",
+      "university": "백제예술대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "전북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio40690471.html",
+      "totalCapacity": 157,
+      "totalApplicants": 338,
+      "deptCount": 7,
+      "ratio": "2.15 : 1",
+      "ratioNum": 2.15
+    },
+    {
+      "key": "삼육보건대학교",
+      "univId": "sahmyook-health",
+      "university": "삼육보건대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio40760541.html",
+      "totalCapacity": 294,
+      "totalApplicants": 1599,
+      "deptCount": 43,
+      "ratio": "5.44 : 1",
+      "ratioNum": 5.44
+    },
+    {
+      "key": "서일대학교",
+      "univId": "seoil",
+      "university": "서일대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio40840701.html",
+      "totalCapacity": 1506,
+      "totalApplicants": 4284,
+      "deptCount": 201,
+      "ratio": "2.84 : 1",
+      "ratioNum": 2.84
+    },
+    {
+      "key": "서정대학교",
+      "univId": "seojeong",
+      "university": "서정대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio41600441.html",
+      "totalCapacity": 457,
+      "totalApplicants": 1372,
+      "deptCount": 44,
+      "ratio": "3.00 : 1",
+      "ratioNum": 3.0
+    },
+    {
+      "key": "울산과학대학교",
+      "univId": "ulsan-college",
+      "university": "울산과학대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "울산"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio41190481.html",
+      "totalCapacity": 1601,
+      "totalApplicants": 928,
+      "deptCount": 138,
+      "ratio": "0.58 : 1",
+      "ratioNum": 0.58
+    },
+    {
+      "key": "인하공업전문대학",
+      "univId": "inha-tech",
+      "university": "인하공업전문대학",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "인천"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio41260551.html",
+      "totalCapacity": 1770,
+      "totalApplicants": 6962,
+      "deptCount": 61,
+      "ratio": "3.93 : 1",
+      "ratioNum": 3.93
+    },
+    {
+      "key": "재능대학교",
+      "univId": "jeiu",
+      "university": "재능대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "인천"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio41290971.html",
+      "totalCapacity": 963,
+      "totalApplicants": 3287,
+      "deptCount": 99,
+      "ratio": "3.41 : 1",
+      "ratioNum": 3.41
+    },
+    {
+      "key": "청강문화산업대학교",
+      "univId": "chungkang",
+      "university": "청강문화산업대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio41470661.html",
+      "totalCapacity": 1678,
+      "totalApplicants": 10628,
+      "deptCount": 108,
+      "ratio": "6.33 : 1",
+      "ratioNum": 6.33
+    },
+    {
+      "key": "한국폴리텍Ⅰ대학(서울정수,서울강서,성남,제주) (서울정수)",
+      "univId": "polytech1",
+      "university": "한국폴리텍Ⅰ대학(서울정수,서울강서,성남,제주)",
+      "campus": "서울정수",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "서울",
+        "경기",
+        "제주"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50410441.html",
+      "totalCapacity": 852,
+      "totalApplicants": 662,
+      "deptCount": 120,
+      "ratio": "0.78 : 1",
+      "ratioNum": 0.78
+    },
+    {
+      "key": "한국폴리텍Ⅰ대학(서울정수,서울강서,성남,제주) (서울강서)",
+      "univId": "polytech1",
+      "university": "한국폴리텍Ⅰ대학(서울정수,서울강서,성남,제주)",
+      "campus": "서울강서",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "서울",
+        "경기",
+        "제주"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50410441.html",
+      "totalCapacity": 426,
+      "totalApplicants": 140,
+      "deptCount": 60,
+      "ratio": "0.33 : 1",
+      "ratioNum": 0.33
+    },
+    {
+      "key": "한국폴리텍Ⅰ대학(서울정수,서울강서,성남,제주) (성남)",
+      "univId": "polytech1",
+      "university": "한국폴리텍Ⅰ대학(서울정수,서울강서,성남,제주)",
+      "campus": "성남",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "서울",
+        "경기",
+        "제주"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50410441.html",
+      "totalCapacity": 530,
+      "totalApplicants": 490,
+      "deptCount": 100,
+      "ratio": "0.92 : 1",
+      "ratioNum": 0.92
+    },
+    {
+      "key": "한국폴리텍Ⅰ대학(서울정수,서울강서,성남,제주) (제주)",
+      "univId": "polytech1",
+      "university": "한국폴리텍Ⅰ대학(서울정수,서울강서,성남,제주)",
+      "campus": "제주",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "서울",
+        "경기",
+        "제주"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50410441.html",
+      "totalCapacity": 44,
+      "totalApplicants": 22,
+      "deptCount": 10,
+      "ratio": "0.50 : 1",
+      "ratioNum": 0.5
+    },
+    {
+      "key": "한국폴리텍Ⅱ대학(인천,남인천) (남인천캠퍼스)",
+      "univId": "polytech2",
+      "university": "한국폴리텍Ⅱ대학(인천,남인천)",
+      "campus": "남인천캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "인천"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50420441.html",
+      "totalCapacity": 48,
+      "totalApplicants": 14,
+      "deptCount": 10,
+      "ratio": "0.29 : 1",
+      "ratioNum": 0.29
+    },
+    {
+      "key": "한국폴리텍Ⅱ대학(인천,남인천) (인천캠퍼스)",
+      "univId": "polytech2",
+      "university": "한국폴리텍Ⅱ대학(인천,남인천)",
+      "campus": "인천캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "인천"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50420441.html",
+      "totalCapacity": 1184,
+      "totalApplicants": 906,
+      "deptCount": 96,
+      "ratio": "0.77 : 1",
+      "ratioNum": 0.77
+    },
+    {
+      "key": "한국폴리텍Ⅲ대학(춘천,원주,강릉) (춘천캠퍼스)",
+      "univId": "polytech3",
+      "university": "한국폴리텍Ⅲ대학(춘천,원주,강릉)",
+      "campus": "춘천캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "강원"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50430471.html",
+      "totalCapacity": 354,
+      "totalApplicants": 134,
+      "deptCount": 50,
+      "ratio": "0.38 : 1",
+      "ratioNum": 0.38
+    },
+    {
+      "key": "한국폴리텍Ⅲ대학(춘천,원주,강릉) (원주캠퍼스)",
+      "univId": "polytech3",
+      "university": "한국폴리텍Ⅲ대학(춘천,원주,강릉)",
+      "campus": "원주캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "강원"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50430471.html",
+      "totalCapacity": 112,
+      "totalApplicants": 34,
+      "deptCount": 20,
+      "ratio": "0.30 : 1",
+      "ratioNum": 0.3
+    },
+    {
+      "key": "한국폴리텍Ⅲ대학(춘천,원주,강릉) (강릉캠퍼스)",
+      "univId": "polytech3",
+      "university": "한국폴리텍Ⅲ대학(춘천,원주,강릉)",
+      "campus": "강릉캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "강원"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50430471.html",
+      "totalCapacity": 104,
+      "totalApplicants": 70,
+      "deptCount": 20,
+      "ratio": "0.67 : 1",
+      "ratioNum": 0.67
+    },
+    {
+      "key": "한국폴리텍Ⅳ대학(대전,청주,아산,충남) (대전캠퍼스)",
+      "univId": "polytech4",
+      "university": "한국폴리텍Ⅳ대학(대전,청주,아산,충남)",
+      "campus": "대전캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "대전",
+        "충남",
+        "세종"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50440431.html",
+      "totalCapacity": 574,
+      "totalApplicants": 418,
+      "deptCount": 90,
+      "ratio": "0.73 : 1",
+      "ratioNum": 0.73
+    },
+    {
+      "key": "한국폴리텍Ⅳ대학(대전,청주,아산,충남) (청주캠퍼스)",
+      "univId": "polytech4",
+      "university": "한국폴리텍Ⅳ대학(대전,청주,아산,충남)",
+      "campus": "청주캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "대전",
+        "충남",
+        "세종"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50440431.html",
+      "totalCapacity": 456,
+      "totalApplicants": 544,
+      "deptCount": 66,
+      "ratio": "1.19 : 1",
+      "ratioNum": 1.19
+    },
+    {
+      "key": "한국폴리텍Ⅳ대학(대전,청주,아산,충남) (아산캠퍼스)",
+      "univId": "polytech4",
+      "university": "한국폴리텍Ⅳ대학(대전,청주,아산,충남)",
+      "campus": "아산캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "대전",
+        "충남",
+        "세종"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50440431.html",
+      "totalCapacity": 336,
+      "totalApplicants": 242,
+      "deptCount": 80,
+      "ratio": "0.72 : 1",
+      "ratioNum": 0.72
+    },
+    {
+      "key": "한국폴리텍Ⅳ대학(대전,청주,아산,충남) (충남캠퍼스)",
+      "univId": "polytech4",
+      "university": "한국폴리텍Ⅳ대학(대전,청주,아산,충남)",
+      "campus": "충남캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "대전",
+        "충남",
+        "세종"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50440431.html",
+      "totalCapacity": 192,
+      "totalApplicants": 98,
+      "deptCount": 40,
+      "ratio": "0.51 : 1",
+      "ratioNum": 0.51
+    },
+    {
+      "key": "한국폴리텍Ⅴ대학(광주,전북,전남,익산) (광주캠퍼스)",
+      "univId": "polytech5",
+      "university": "한국폴리텍Ⅴ대학(광주,전북,전남,익산)",
+      "campus": "광주캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "전남광주",
+        "전북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50450481.html",
+      "totalCapacity": 564,
+      "totalApplicants": 930,
+      "deptCount": 90,
+      "ratio": "1.65 : 1",
+      "ratioNum": 1.65
+    },
+    {
+      "key": "한국폴리텍Ⅴ대학(광주,전북,전남,익산) (전북캠퍼스)",
+      "univId": "polytech5",
+      "university": "한국폴리텍Ⅴ대학(광주,전북,전남,익산)",
+      "campus": "전북캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "전남광주",
+        "전북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50450481.html",
+      "totalCapacity": 330,
+      "totalApplicants": 192,
+      "deptCount": 50,
+      "ratio": "0.58 : 1",
+      "ratioNum": 0.58
+    },
+    {
+      "key": "한국폴리텍Ⅴ대학(광주,전북,전남,익산) (전남캠퍼스)",
+      "univId": "polytech5",
+      "university": "한국폴리텍Ⅴ대학(광주,전북,전남,익산)",
+      "campus": "전남캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "전남광주",
+        "전북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50450481.html",
+      "totalCapacity": 138,
+      "totalApplicants": 68,
+      "deptCount": 30,
+      "ratio": "0.49 : 1",
+      "ratioNum": 0.49
+    },
+    {
+      "key": "한국폴리텍Ⅴ대학(광주,전북,전남,익산) (익산캠퍼스)",
+      "univId": "polytech5",
+      "university": "한국폴리텍Ⅴ대학(광주,전북,전남,익산)",
+      "campus": "익산캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "전남광주",
+        "전북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50450481.html",
+      "totalCapacity": 92,
+      "totalApplicants": 38,
+      "deptCount": 20,
+      "ratio": "0.41 : 1",
+      "ratioNum": 0.41
+    },
+    {
+      "key": "한국폴리텍Ⅵ대학(대구,구미,영주,영남융합기술) (대구캠퍼스)",
+      "univId": "polytech6",
+      "university": "한국폴리텍Ⅵ대학(대구,구미,영주,영남융합기술)",
+      "campus": "대구캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50460421.html",
+      "totalCapacity": 384,
+      "totalApplicants": 204,
+      "deptCount": 80,
+      "ratio": "0.53 : 1",
+      "ratioNum": 0.53
+    },
+    {
+      "key": "한국폴리텍Ⅵ대학(대구,구미,영주,영남융합기술) (구미캠퍼스)",
+      "univId": "polytech6",
+      "university": "한국폴리텍Ⅵ대학(대구,구미,영주,영남융합기술)",
+      "campus": "구미캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50460421.html",
+      "totalCapacity": 308,
+      "totalApplicants": 206,
+      "deptCount": 60,
+      "ratio": "0.67 : 1",
+      "ratioNum": 0.67
+    },
+    {
+      "key": "한국폴리텍Ⅵ대학(대구,구미,영주,영남융합기술) (영주캠퍼스)",
+      "univId": "polytech6",
+      "university": "한국폴리텍Ⅵ대학(대구,구미,영주,영남융합기술)",
+      "campus": "영주캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50460421.html",
+      "totalCapacity": 34,
+      "totalApplicants": 14,
+      "deptCount": 10,
+      "ratio": "0.41 : 1",
+      "ratioNum": 0.41
+    },
+    {
+      "key": "한국폴리텍Ⅵ대학(대구,구미,영주,영남융합기술) (영남융합기술캠퍼스)",
+      "univId": "polytech6",
+      "university": "한국폴리텍Ⅵ대학(대구,구미,영주,영남융합기술)",
+      "campus": "영남융합기술캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50460421.html",
+      "totalCapacity": 136,
+      "totalApplicants": 24,
+      "deptCount": 40,
+      "ratio": "0.18 : 1",
+      "ratioNum": 0.18
+    },
+    {
+      "key": "한국폴리텍Ⅶ대학(창원,부산,울산) (창원캠퍼스)",
+      "univId": "polytech7",
+      "university": "한국폴리텍Ⅶ대학(창원,부산,울산)",
+      "campus": "창원캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "부산",
+        "울산",
+        "경남"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50470451.html",
+      "totalCapacity": 796,
+      "totalApplicants": 1186,
+      "deptCount": 78,
+      "ratio": "1.49 : 1",
+      "ratioNum": 1.49
+    },
+    {
+      "key": "한국폴리텍Ⅶ대학(창원,부산,울산) (부산캠퍼스)",
+      "univId": "polytech7",
+      "university": "한국폴리텍Ⅶ대학(창원,부산,울산)",
+      "campus": "부산캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "부산",
+        "울산",
+        "경남"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50470451.html",
+      "totalCapacity": 468,
+      "totalApplicants": 286,
+      "deptCount": 48,
+      "ratio": "0.61 : 1",
+      "ratioNum": 0.61
+    },
+    {
+      "key": "한국폴리텍Ⅶ대학(창원,부산,울산) (울산캠퍼스)",
+      "univId": "polytech7",
+      "university": "한국폴리텍Ⅶ대학(창원,부산,울산)",
+      "campus": "울산캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "부산",
+        "울산",
+        "경남"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50470451.html",
+      "totalCapacity": 500,
+      "totalApplicants": 536,
+      "deptCount": 42,
+      "ratio": "1.07 : 1",
+      "ratioNum": 1.07
+    },
+    {
+      "key": "한국폴리텍특성화대학(바이오,반도체융합,항공,로봇) (바이오캠퍼스)",
+      "univId": "polytech-special",
+      "university": "한국폴리텍특성화대학(바이오,반도체융합,항공,로봇)",
+      "campus": "바이오캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "충남",
+        "경남",
+        "경북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50480401.html",
+      "totalCapacity": 246,
+      "totalApplicants": 120,
+      "deptCount": 50,
+      "ratio": "0.49 : 1",
+      "ratioNum": 0.49
+    },
+    {
+      "key": "한국폴리텍특성화대학(바이오,반도체융합,항공,로봇) (항공캠퍼스)",
+      "univId": "polytech-special",
+      "university": "한국폴리텍특성화대학(바이오,반도체융합,항공,로봇)",
+      "campus": "항공캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "충남",
+        "경남",
+        "경북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50480401.html",
+      "totalCapacity": 224,
+      "totalApplicants": 172,
+      "deptCount": 40,
+      "ratio": "0.77 : 1",
+      "ratioNum": 0.77
+    },
+    {
+      "key": "한국폴리텍특성화대학(바이오,반도체융합,항공,로봇) (반도체융합캠퍼스)",
+      "univId": "polytech-special",
+      "university": "한국폴리텍특성화대학(바이오,반도체융합,항공,로봇)",
+      "campus": "반도체융합캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "충남",
+        "경남",
+        "경북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50480401.html",
+      "totalCapacity": 466,
+      "totalApplicants": 292,
+      "deptCount": 80,
+      "ratio": "0.63 : 1",
+      "ratioNum": 0.63
+    },
+    {
+      "key": "한국폴리텍특성화대학(바이오,반도체융합,항공,로봇) (로봇캠퍼스)",
+      "univId": "polytech-special",
+      "university": "한국폴리텍특성화대학(바이오,반도체융합,항공,로봇)",
+      "campus": "로봇캠퍼스",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "충남",
+        "경남",
+        "경북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio50480401.html",
+      "totalCapacity": 184,
+      "totalApplicants": 28,
+      "deptCount": 20,
+      "ratio": "0.15 : 1",
+      "ratioNum": 0.15
+    },
+    {
+      "key": "한림성심대학교",
+      "univId": "hallym-sungsim",
+      "university": "한림성심대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "강원"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio41550971.html",
+      "totalCapacity": 781,
+      "totalApplicants": 1353,
+      "deptCount": 66,
+      "ratio": "1.73 : 1",
+      "ratioNum": 1.73
+    },
+    {
+      "key": "경기과학기술대학교",
+      "univId": "gyeonggi-tech",
+      "university": "경기과학기술대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KMCZXJTlKZkNDYUxKN2ZUZg==",
+      "totalCapacity": 1196,
+      "totalApplicants": 2791,
+      "deptCount": 148,
+      "ratio": "2.33 : 1",
+      "ratioNum": 2.33
+    },
+    {
+      "key": "계원예술대학교",
+      "univId": "kaywon-arts",
+      "university": "계원예술대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KV2FOYjg5SmZDQ2FMSjdmVGY=",
+      "totalCapacity": 164,
+      "totalApplicants": 629,
+      "deptCount": 50,
+      "ratio": "3.84 : 1",
+      "ratioNum": 3.84
+    },
+    {
+      "key": "국제대학교",
+      "univId": "guk-je",
+      "university": "국제대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KYC85YWE5SmZDQ2FMSjdmVGY=",
+      "totalCapacity": 819,
+      "totalApplicants": 1983,
+      "deptCount": 58,
+      "ratio": "2.42 : 1",
+      "ratioNum": 2.42
+    },
+    {
+      "key": "대림대학교",
+      "univId": "daelim",
+      "university": "대림대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KTSVDYDhWSmZDQ2FMSjdmVGY=",
+      "totalCapacity": 1429,
+      "totalApplicants": 4278,
+      "deptCount": 111,
+      "ratio": "2.99 : 1",
+      "ratioNum": 2.99
+    },
+    {
+      "key": "동남보건대학교",
+      "univId": "dongnam-health",
+      "university": "동남보건대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KTThXcldhVkpmQ0NhTEo3ZlRm",
+      "totalCapacity": 945,
+      "totalApplicants": 3502,
+      "deptCount": 66,
+      "ratio": "3.71 : 1",
+      "ratioNum": 3.71
+    },
+    {
+      "key": "동서울대학교",
+      "univId": "dongseoul",
+      "university": "동서울대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOlZKZkNDYUxKN2ZUZg==",
+      "totalCapacity": 1747,
+      "totalApplicants": 5426,
+      "deptCount": 221,
+      "ratio": "3.11 : 1",
+      "ratioNum": 3.11
+    },
+    {
+      "key": "동아방송예술대학교",
+      "univId": "dsam",
+      "university": "동아방송예술대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOE0lVkpmQ0NhTEo3ZlRm",
+      "totalCapacity": 625,
+      "totalApplicants": 6335,
+      "deptCount": 95,
+      "ratio": "10.14 : 1",
+      "ratioNum": 10.14
+    },
+    {
+      "key": "명지전문대학",
+      "univId": "myongji-college",
+      "university": "명지전문대학",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KTC9NSmZDQ2FMSjdmVGY=",
+      "totalCapacity": 1457,
+      "totalApplicants": 6180,
+      "deptCount": 78,
+      "ratio": "4.24 : 1",
+      "ratioNum": 4.24
+    },
+    {
+      "key": "부천대학교",
+      "univId": "bucheon",
+      "university": "부천대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KTEJKZkNDYUxKN2ZUZg=",
+      "totalCapacity": 1696,
+      "totalApplicants": 7144,
+      "deptCount": 236,
+      "ratio": "4.21 : 1",
+      "ratioNum": 4.21
+    },
+    {
+      "key": "서울여자간호대학교",
+      "univId": "seoul-women-nursing",
+      "university": "서울여자간호대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KTC9XJkpmQ0NhTEo3ZlRm",
+      "totalCapacity": 92,
+      "totalApplicants": 801,
+      "deptCount": 7,
+      "ratio": "8.71 : 1",
+      "ratioNum": 8.71
+    },
+    {
+      "key": "수원과학대학교",
+      "univId": "suwon-science",
+      "university": "수원과학대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KTCYmSmZDQ2FMSjdmVGY=",
+      "totalCapacity": 1304,
+      "totalApplicants": 4459,
+      "deptCount": 78,
+      "ratio": "3.42 : 1",
+      "ratioNum": 3.42
+    },
+    {
+      "key": "수원여자대학교",
+      "univId": "suwon-women",
+      "university": "수원여자대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KTE4mSmZDQ2FMSjdmVGY=",
+      "totalCapacity": 1038,
+      "totalApplicants": 4014,
+      "deptCount": 66,
+      "ratio": "3.87 : 1",
+      "ratioNum": 3.87
+    },
+    {
+      "key": "숭의여자대학교",
+      "univId": "soongeui-women",
+      "university": "숭의여자대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KTE5gJkpmQ0NhTEo3ZlRm",
+      "totalCapacity": 841,
+      "totalApplicants": 2092,
+      "deptCount": 42,
+      "ratio": "2.49 : 1",
+      "ratioNum": 2.49
+    },
+    {
+      "key": "신구대학교",
+      "univId": "shingu",
+      "university": "신구대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOnJXJXwmSmZDQ2FMSjdmVGY=",
+      "totalCapacity": 1758,
+      "totalApplicants": 6522,
+      "deptCount": 142,
+      "ratio": "3.71 : 1",
+      "ratioNum": 3.71
+    },
+    {
+      "key": "신안산대학교",
+      "univId": "shinansan",
+      "university": "신안산대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KMEw4SmZDQ2FMSjdmVGY=",
+      "totalCapacity": 858,
+      "totalApplicants": 2905,
+      "deptCount": 160,
+      "ratio": "3.39 : 1",
+      "ratioNum": 3.39
+    },
+    {
+      "key": "안산대학교",
+      "univId": "ansan",
+      "university": "안산대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KVzgmVzhKZkNDYUxKN2ZUZg==",
+      "totalCapacity": 1173,
+      "totalApplicants": 4316,
+      "deptCount": 103,
+      "ratio": "3.68 : 1",
+      "ratioNum": 3.68
+    },
+    {
+      "key": "연성대학교",
+      "univId": "yeonsung",
+      "university": "연성대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5Kclc6JldhYGJKZkNDYUxKN2ZUZg==",
+      "totalCapacity": 1581,
+      "totalApplicants": 8304,
+      "deptCount": 161,
+      "ratio": "5.25 : 1",
+      "ratioNum": 5.25
+    },
+    {
+      "key": "오산대학교",
+      "univId": "osan",
+      "university": "오산대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KVzgmYUpmQ0NhTEo3ZlRm",
+      "totalCapacity": 1369,
+      "totalApplicants": 6117,
+      "deptCount": 150,
+      "ratio": "4.47 : 1",
+      "ratioNum": 4.47
+    },
+    {
+      "key": "유한대학교",
+      "univId": "yuhan",
+      "university": "유한대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KVzh8OmJKZkNDYUxKN2ZUZg==",
+      "totalCapacity": 1529,
+      "totalApplicants": 5444,
+      "deptCount": 168,
+      "ratio": "3.56 : 1",
+      "ratioNum": 3.56
+    },
+    {
+      "key": "인덕대학교",
+      "univId": "induk",
+      "university": "인덕대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOTpWVyVKZkNDYUxKN2ZUZg==",
+      "totalCapacity": 1399,
+      "totalApplicants": 3964,
+      "deptCount": 104,
+      "ratio": "2.83 : 1",
+      "ratioNum": 2.83
+    },
+    {
+      "key": "장안대학교",
+      "univId": "jangan",
+      "university": "장안대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KVzhyVzgvSmZDQ2FMSjdmVGY=",
+      "totalCapacity": 1000,
+      "totalApplicants": 3687,
+      "deptCount": 84,
+      "ratio": "3.69 : 1",
+      "ratioNum": 3.69
+    },
+    {
+      "key": "한양여자대학교",
+      "univId": "hanyang-women",
+      "university": "한양여자대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KVzhNYU5ifEpmQ0NhTEo3ZlRm",
+      "totalCapacity": 1407,
+      "totalApplicants": 5177,
+      "deptCount": 125,
+      "ratio": "3.68 : 1",
+      "ratioNum": 3.68
+    },
+    {
+      "key": "UNIST(울산과학기술원)",
+      "univId": "unist",
+      "university": "UNIST(울산과학기술원)",
+      "campus": "",
+      "category": "과기원/특수대",
+      "univType": "특수대",
+      "regions": [
+        "울산"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KMCYlVzpKXiUmOiZKN2ZUZg==",
+      "totalCapacity": 1130,
+      "totalApplicants": 22422,
+      "deptCount": 10,
+      "ratio": "19.84 : 1",
+      "ratioNum": 19.84
+    },
+    {
+      "key": "가야대학교",
+      "univId": "school-55",
+      "university": "가야대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경남"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10010711.html",
+      "totalCapacity": 399,
+      "totalApplicants": 2187,
+      "deptCount": 17,
+      "ratio": "5.48 : 1",
+      "ratioNum": 5.48
+    },
+    {
+      "key": "가천대학교",
+      "univId": "school-56",
+      "university": "가천대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10190711.html",
+      "totalCapacity": 3245,
+      "totalApplicants": 83300,
+      "deptCount": 308,
+      "ratio": "25.67 : 1",
+      "ratioNum": 25.67
+    },
+    {
+      "key": "가톨릭관동대학교",
+      "univId": "school-57",
+      "university": "가톨릭관동대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "강원"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOjlMSmYlJjomSjdmVGY=",
+      "totalCapacity": 1602,
+      "totalApplicants": 7143,
+      "deptCount": 123,
+      "ratio": "4.46 : 1",
+      "ratioNum": 4.46
+    },
+    {
+      "key": "가톨릭꽃동네대학교",
+      "univId": "school-58",
+      "university": "가톨릭꽃동네대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충북"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KMGE5OUpmJSY6Jko3ZlRm",
+      "totalCapacity": 101,
+      "totalApplicants": 513,
+      "deptCount": 12,
+      "ratio": "5.08 : 1",
+      "ratioNum": 5.08
+    },
+    {
+      "key": "가톨릭대학교",
+      "univId": "school-59",
+      "university": "가톨릭대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10030381.html",
+      "totalCapacity": 1409,
+      "totalApplicants": 22907,
+      "deptCount": 232,
+      "ratio": "16.26 : 1",
+      "ratioNum": 16.26
+    },
+    {
+      "key": "감리교신학대학교",
+      "univId": "school-60",
+      "university": "감리교신학대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KJjBNSmYlJjomSjdmVGY=",
+      "totalCapacity": 91,
+      "totalApplicants": 110,
+      "deptCount": 2,
+      "ratio": "1.21 : 1",
+      "ratioNum": 1.21
+    },
+    {
+      "key": "강남대학교",
+      "univId": "school-61",
+      "university": "강남대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KTThXclc4OUpmJSY6Jko3ZlRm",
+      "totalCapacity": 1053,
+      "totalApplicants": 9272,
+      "deptCount": 102,
+      "ratio": "8.81 : 1",
+      "ratioNum": 8.81
+    },
+    {
+      "key": "강서대학교",
+      "univId": "school-62",
+      "university": "강서대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10360791.html",
+      "totalCapacity": 266,
+      "totalApplicants": 3310,
+      "deptCount": 30,
+      "ratio": "12.44 : 1",
+      "ratioNum": 12.44
+    },
+    {
+      "key": "강원대학교",
+      "univId": "school-63",
+      "university": "강원대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "강원"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KV2FOclc4OUpmJSY6Jko3ZlRm",
+      "totalCapacity": 5606,
+      "totalApplicants": 40587,
+      "deptCount": 959,
+      "ratio": "7.24 : 1",
+      "ratioNum": 7.24
+    },
+    {
+      "key": "건국대학교(서울)",
+      "univId": "school-64",
+      "university": "건국대학교(서울)",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10080381.html",
+      "totalCapacity": 1900,
+      "totalApplicants": 51051,
+      "deptCount": 195,
+      "ratio": "26.87 : 1",
+      "ratioNum": 26.87
+    },
+    {
+      "key": "건양대학교",
+      "univId": "school-65",
+      "university": "건양대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충남"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10100811.html",
+      "totalCapacity": 1627,
+      "totalApplicants": 9799,
+      "deptCount": 138,
+      "ratio": "6.02 : 1",
+      "ratioNum": 6.02
+    },
+    {
+      "key": "경기대학교",
+      "univId": "school-66",
+      "university": "경기대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기",
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KJXJyV2FiOUpmJSY6Jko3ZlRm",
+      "totalCapacity": 1874,
+      "totalApplicants": 23839,
+      "deptCount": 216,
+      "ratio": "12.72 : 1",
+      "ratioNum": 12.72
+    },
+    {
+      "key": "경남대학교",
+      "univId": "school-67",
+      "university": "경남대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경남"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10130591.html",
+      "totalCapacity": 2082,
+      "totalApplicants": 8840,
+      "deptCount": 198,
+      "ratio": "4.25 : 1",
+      "ratioNum": 4.25
+    },
+    {
+      "key": "경동대학교",
+      "univId": "school-68",
+      "university": "경동대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "강원"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KRCVXOlY5SmYlJjomSjdmVGY=",
+      "totalCapacity": 1596,
+      "totalApplicants": 8847,
+      "deptCount": 39,
+      "ratio": "5.54 : 1",
+      "ratioNum": 5.54
+    },
+    {
+      "key": "경북대학교",
+      "univId": "school-69",
+      "university": "경북대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "대구"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOlc5SmYlJjomSjdmVGY=",
+      "totalCapacity": 4515,
+      "totalApplicants": 59507,
+      "deptCount": 723,
+      "ratio": "13.18 : 1",
+      "ratioNum": 13.18
+    },
+    {
+      "key": "경상국립대학교",
+      "univId": "school-70",
+      "university": "경상국립대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경남"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10171011.html",
+      "totalCapacity": 3729,
+      "totalApplicants": 30156,
+      "deptCount": 545,
+      "ratio": "8.09 : 1",
+      "ratioNum": 8.09
+    },
+    {
+      "key": "경성대학교",
+      "univId": "school-71",
+      "university": "경성대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "부산"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KJjlKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 2624,
+      "totalApplicants": 15077,
+      "deptCount": 321,
+      "ratio": "5.75 : 1",
+      "ratioNum": 5.75
+    },
+    {
+      "key": "경인교육대학교",
+      "univId": "school-72",
+      "university": "경인교육대학교",
+      "campus": "",
+      "category": "교대",
+      "univType": "4년제",
+      "regions": [
+        "인천"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio20060251.html",
+      "totalCapacity": 804,
+      "totalApplicants": 5638,
+      "deptCount": 8,
+      "ratio": "7.01 : 1",
+      "ratioNum": 7.01
+    },
+    {
+      "key": "경희대학교",
+      "univId": "school-73",
+      "university": "경희대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울",
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOnw5SmYlJjomSjdmVGY=",
+      "totalCapacity": 3006,
+      "totalApplicants": 67693,
+      "deptCount": 405,
+      "ratio": "22.52 : 1",
+      "ratioNum": 22.52
+    },
+    {
+      "key": "계명대학교",
+      "univId": "school-74",
+      "university": "계명대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "대구"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOk05SmYlJjomSjdmVGY=",
+      "totalCapacity": 4824,
+      "totalApplicants": 29939,
+      "deptCount": 605,
+      "ratio": "6.21 : 1",
+      "ratioNum": 6.21
+    },
+    {
+      "key": "고려대학교(세종)",
+      "univId": "school-75",
+      "university": "고려대학교(세종)",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "세종"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KcldhL2AmOzhgfWE5SmYlJjomSjdmVGY=",
+      "totalCapacity": 1273,
+      "totalApplicants": 10273,
+      "deptCount": 157,
+      "ratio": "8.07 : 1",
+      "ratioNum": 8.07
+    },
+    {
+      "key": "고려대학교(안암)",
+      "univId": "school-76",
+      "university": "고려대학교(안암)",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOGB9YTlKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 2730,
+      "totalApplicants": 55708,
+      "deptCount": 327,
+      "ratio": "20.41 : 1",
+      "ratioNum": 20.41
+    },
+    {
+      "key": "고신대학교",
+      "univId": "school-77",
+      "university": "고신대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "부산"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KVyUmYTlKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 1105,
+      "totalApplicants": 7485,
+      "deptCount": 132,
+      "ratio": "6.77 : 1",
+      "ratioNum": 6.77
+    },
+    {
+      "key": "공주교육대학교",
+      "univId": "school-78",
+      "university": "공주교육대학교",
+      "campus": "",
+      "category": "교대",
+      "univType": "4년제",
+      "regions": [
+        "충남"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KYDY6L3JXYTlKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 177,
+      "totalApplicants": 1257,
+      "deptCount": 6,
+      "ratio": "7.10 : 1",
+      "ratioNum": 7.1
+    },
+    {
+      "key": "광운대학교",
+      "univId": "school-79",
+      "university": "광운대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KTjlKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 1135,
+      "totalApplicants": 16593,
+      "deptCount": 146,
+      "ratio": "14.62 : 1",
+      "ratioNum": 14.62
+    },
+    {
+      "key": "광주과학기술원(GIST)",
+      "univId": "school-80",
+      "university": "광주과학기술원(GIST)",
+      "campus": "",
+      "category": "과기원/특수대",
+      "univType": "특수대",
+      "regions": [
+        "전남광주"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KbzBlbyZlbyVlb3JlSl4lJjomSjdmVGY=",
+      "totalCapacity": 315,
+      "totalApplicants": 4536,
+      "deptCount": 5,
+      "ratio": "14.40 : 1",
+      "ratioNum": 14.4
+    },
+    {
+      "key": "광주교육대학교",
+      "univId": "school-81",
+      "university": "광주교육대학교",
+      "campus": "",
+      "category": "교대",
+      "univType": "4년제",
+      "regions": [
+        "전남광주"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KYDY6L3JXOE45SmYlJjomSjdmVGY=",
+      "totalCapacity": 272,
+      "totalApplicants": 1926,
+      "deptCount": 11,
+      "ratio": "7.08 : 1",
+      "ratioNum": 7.08
+    },
+    {
+      "key": "광주대학교",
+      "univId": "school-82",
+      "university": "광주대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전남광주"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOi9yVzhOckpmJSY6Jko3ZlRm",
+      "totalCapacity": 1351,
+      "totalApplicants": 5897,
+      "deptCount": 54,
+      "ratio": "4.36 : 1",
+      "ratioNum": 4.36
+    },
+    {
+      "key": "광주여자대학교",
+      "univId": "school-83",
+      "university": "광주여자대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전남광주"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOk45SmYlJjomSjdmVGY=",
+      "totalCapacity": 798,
+      "totalApplicants": 3513,
+      "deptCount": 38,
+      "ratio": "4.40 : 1",
+      "ratioNum": 4.4
+    },
+    {
+      "key": "국립경국대학교",
+      "univId": "school-84",
+      "university": "국립경국대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경북"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KcldhVlc4SmYlJjomSjdmVGY=",
+      "totalCapacity": 1426,
+      "totalApplicants": 8101,
+      "deptCount": 163,
+      "ratio": "5.68 : 1",
+      "ratioNum": 5.68
+    },
+    {
+      "key": "국립공주대학교",
+      "univId": "school-85",
+      "university": "국립공주대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충남"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10281081.html",
+      "totalCapacity": 2834,
+      "totalApplicants": 27579,
+      "deptCount": 378,
+      "ratio": "9.73 : 1",
+      "ratioNum": 9.73
+    },
+    {
+      "key": "국립군산대학교",
+      "univId": "school-86",
+      "university": "국립군산대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10350611.html",
+      "totalCapacity": 1888,
+      "totalApplicants": 10307,
+      "deptCount": 226,
+      "ratio": "5.46 : 1",
+      "ratioNum": 5.46
+    },
+    {
+      "key": "국립금오공과대학교",
+      "univId": "school-87",
+      "university": "국립금오공과대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경북"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KfGFNOjlKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 1187,
+      "totalApplicants": 8531,
+      "deptCount": 118,
+      "ratio": "7.19 : 1",
+      "ratioNum": 7.19
+    },
+    {
+      "key": "국립목포대학교",
+      "univId": "school-88",
+      "university": "국립목포대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전남광주"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10690271.html",
+      "totalCapacity": 1782,
+      "totalApplicants": 9935,
+      "deptCount": 141,
+      "ratio": "5.58 : 1",
+      "ratioNum": 5.58
+    },
+    {
+      "key": "국립목포해양대학교",
+      "univId": "school-89",
+      "university": "국립목포해양대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전남광주"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10700541.html",
+      "totalCapacity": 682,
+      "totalApplicants": 4392,
+      "deptCount": 91,
+      "ratio": "6.44 : 1",
+      "ratioNum": 6.44
+    },
+    {
+      "key": "국립부경대학교",
+      "univId": "school-90",
+      "university": "국립부경대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "부산"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10720401.html",
+      "totalCapacity": 2962,
+      "totalApplicants": 25049,
+      "deptCount": 458,
+      "ratio": "8.46 : 1",
+      "ratioNum": 8.46
+    },
+    {
+      "key": "국립순천대학교",
+      "univId": "school-91",
+      "university": "국립순천대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전남광주"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10990491.html",
+      "totalCapacity": 1640,
+      "totalApplicants": 9012,
+      "deptCount": 118,
+      "ratio": "5.50 : 1",
+      "ratioNum": 5.5
+    },
+    {
+      "key": "국립인천대학교",
+      "univId": "school-92",
+      "university": "국립인천대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "인천"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11230791.html",
+      "totalCapacity": 1816,
+      "totalApplicants": 18184,
+      "deptCount": 312,
+      "ratio": "10.01 : 1",
+      "ratioNum": 10.01
+    },
+    {
+      "key": "국립창원대학교",
+      "univId": "school-93",
+      "university": "국립창원대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경남"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11350621.html",
+      "totalCapacity": 1709,
+      "totalApplicants": 11822,
+      "deptCount": 295,
+      "ratio": "6.92 : 1",
+      "ratioNum": 6.92
+    },
+    {
+      "key": "국립한국교통대학교",
+      "univId": "school-94",
+      "university": "국립한국교통대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충북",
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio30150631.html",
+      "totalCapacity": 1984,
+      "totalApplicants": 11833,
+      "deptCount": 315,
+      "ratio": "5.96 : 1",
+      "ratioNum": 5.96
+    },
+    {
+      "key": "국립한국해양대학교",
+      "univId": "school-95",
+      "university": "국립한국해양대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "부산"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOmFNOUpmJSY6Jko3ZlRm",
+      "totalCapacity": 1211,
+      "totalApplicants": 9642,
+      "deptCount": 225,
+      "ratio": "7.96 : 1",
+      "ratioNum": 7.96
+    },
+    {
+      "key": "국립한밭대학교",
+      "univId": "school-96",
+      "university": "국립한밭대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "대전"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio30040971.html",
+      "totalCapacity": 2053,
+      "totalApplicants": 17080,
+      "deptCount": 198,
+      "ratio": "8.32 : 1",
+      "ratioNum": 8.32
+    },
+    {
+      "key": "국민대학교",
+      "univId": "school-97",
+      "university": "국민대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KVyVNOWFhOUpmJSY6Jko3ZlRm",
+      "totalCapacity": 2109,
+      "totalApplicants": 46253,
+      "deptCount": 249,
+      "ratio": "21.93 : 1",
+      "ratioNum": 21.93
+    },
+    {
+      "key": "극동대학교",
+      "univId": "school-98",
+      "university": "극동대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충북"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOlY5SmYlJjomSjdmVGY=",
+      "totalCapacity": 647,
+      "totalApplicants": 3411,
+      "deptCount": 24,
+      "ratio": "5.27 : 1",
+      "ratioNum": 5.27
+    },
+    {
+      "key": "금강대학교",
+      "univId": "school-99",
+      "university": "금강대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충남"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOnJySmYlJjomSjdmVGY=",
+      "totalCapacity": 110,
+      "totalApplicants": 32,
+      "deptCount": 6,
+      "ratio": "0.29 : 1",
+      "ratioNum": 0.29
+    },
+    {
+      "key": "김천대학교",
+      "univId": "school-100",
+      "university": "김천대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio40330621.html",
+      "totalCapacity": 664,
+      "totalApplicants": 2297,
+      "deptCount": 42,
+      "ratio": "3.46 : 1",
+      "ratioNum": 3.46
+    },
+    {
+      "key": "나사렛대학교",
+      "univId": "school-101",
+      "university": "나사렛대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충남"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOld9YTlKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 1136,
+      "totalApplicants": 6297,
+      "deptCount": 78,
+      "ratio": "5.54 : 1",
+      "ratioNum": 5.54
+    },
+    {
+      "key": "남부대학교",
+      "univId": "school-102",
+      "university": "남부대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전남광주"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOkJNOFdKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 650,
+      "totalApplicants": 3048,
+      "deptCount": 35,
+      "ratio": "4.69 : 1",
+      "ratioNum": 4.69
+    },
+    {
+      "key": "남서울대학교",
+      "univId": "school-103",
+      "university": "남서울대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충남"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KQzphYCZNOFdKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 2106,
+      "totalApplicants": 11385,
+      "deptCount": 230,
+      "ratio": "5.41 : 1",
+      "ratioNum": 5.41
+    },
+    {
+      "key": "단국대학교",
+      "univId": "school-104",
+      "university": "단국대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기",
+        "충남"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10420521.html",
+      "totalCapacity": 3135,
+      "totalApplicants": 40112,
+      "deptCount": 581,
+      "ratio": "12.79 : 1",
+      "ratioNum": 12.79
+    },
+    {
+      "key": "대구가톨릭대학교",
+      "univId": "school-105",
+      "university": "대구가톨릭대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10461101.html",
+      "totalCapacity": 2674,
+      "totalApplicants": 16015,
+      "deptCount": 263,
+      "ratio": "5.99 : 1",
+      "ratioNum": 5.99
+    },
+    {
+      "key": "대구경북과학기술원(DGIST)",
+      "univId": "school-106",
+      "university": "대구경북과학기술원(DGIST)",
+      "campus": "",
+      "category": "과기원/특수대",
+      "univType": "특수대",
+      "regions": [
+        "대구"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KMCYlclZKXiUmOiZKN2ZUZg==",
+      "totalCapacity": 644,
+      "totalApplicants": 18416,
+      "deptCount": 10,
+      "ratio": "28.60 : 1",
+      "ratioNum": 28.6
+    },
+    {
+      "key": "대구교육대학교",
+      "univId": "school-107",
+      "university": "대구교육대학교",
+      "campus": "",
+      "category": "교대",
+      "univType": "4년제",
+      "regions": [
+        "대구"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KYDpXVkpmJSY6Jko3ZlRm",
+      "totalCapacity": 310,
+      "totalApplicants": 694,
+      "deptCount": 9,
+      "ratio": "2.24 : 1",
+      "ratioNum": 2.24
+    },
+    {
+      "key": "대구대학교",
+      "univId": "school-108",
+      "university": "대구대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10440821.html",
+      "totalCapacity": 889,
+      "totalApplicants": 4660,
+      "deptCount": 76,
+      "ratio": "5.24 : 1",
+      "ratioNum": 5.24
+    },
+    {
+      "key": "대구예술대학교",
+      "univId": "school-109",
+      "university": "대구예술대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경북"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOjgwSmYlJjomSjdmVGY=",
+      "totalCapacity": 235,
+      "totalApplicants": 176,
+      "deptCount": 11,
+      "ratio": "0.75 : 1",
+      "ratioNum": 0.75
+    },
+    {
+      "key": "대구한의대학교",
+      "univId": "school-110",
+      "university": "대구한의대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10160691.html",
+      "totalCapacity": 1020,
+      "totalApplicants": 7365,
+      "deptCount": 91,
+      "ratio": "7.22 : 1",
+      "ratioNum": 7.22
+    },
+    {
+      "key": "대신대학교",
+      "univId": "school-111",
+      "university": "대신대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10480261.html",
+      "totalCapacity": 200,
+      "totalApplicants": 55,
+      "deptCount": 1,
+      "ratio": "0.28 : 1",
+      "ratioNum": 0.28
+    },
+    {
+      "key": "대전대학교",
+      "univId": "school-112",
+      "university": "대전대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "대전"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10501131.html",
+      "totalCapacity": 1681,
+      "totalApplicants": 11617,
+      "deptCount": 116,
+      "ratio": "6.91 : 1",
+      "ratioNum": 6.91
+    },
+    {
+      "key": "대진대학교",
+      "univId": "school-113",
+      "university": "대진대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KVyUvYDhWSmYlJjomSjdmVGY=",
+      "totalCapacity": 1233,
+      "totalApplicants": 6736,
+      "deptCount": 180,
+      "ratio": "5.46 : 1",
+      "ratioNum": 5.46
+    },
+    {
+      "key": "덕성여자대학교",
+      "univId": "school-114",
+      "university": "덕성여자대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10530631.html",
+      "totalCapacity": 862,
+      "totalApplicants": 16884,
+      "deptCount": 39,
+      "ratio": "19.59 : 1",
+      "ratioNum": 19.59
+    },
+    {
+      "key": "동국대학교(WISE)",
+      "univId": "school-115",
+      "university": "동국대학교(WISE)",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10540761.html",
+      "totalCapacity": 1737,
+      "totalApplicants": 8024,
+      "deptCount": 138,
+      "ratio": "4.62 : 1",
+      "ratioNum": 4.62
+    },
+    {
+      "key": "동덕여자대학교",
+      "univId": "school-116",
+      "university": "동덕여자대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOTpWcldhVkpmJSY6Jko3ZlRm",
+      "totalCapacity": 1186,
+      "totalApplicants": 13805,
+      "deptCount": 124,
+      "ratio": "11.64 : 1",
+      "ratioNum": 11.64
+    },
+    {
+      "key": "동명대학교",
+      "univId": "school-117",
+      "university": "동명대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "부산"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio30050681.html",
+      "totalCapacity": 1525,
+      "totalApplicants": 7498,
+      "deptCount": 203,
+      "ratio": "4.92 : 1",
+      "ratioNum": 4.92
+    },
+    {
+      "key": "동서대학교",
+      "univId": "school-118",
+      "university": "동서대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "부산"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10570791.html",
+      "totalCapacity": 2121,
+      "totalApplicants": 10991,
+      "deptCount": 155,
+      "ratio": "5.18 : 1",
+      "ratioNum": 5.18
+    },
+    {
+      "key": "동신대학교",
+      "univId": "school-119",
+      "university": "동신대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전남광주"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOlclfCZyV2FWSmYlJjomSjdmVGY=",
+      "totalCapacity": 1431,
+      "totalApplicants": 5841,
+      "deptCount": 78,
+      "ratio": "4.08 : 1",
+      "ratioNum": 4.08
+    },
+    {
+      "key": "동아대학교",
+      "univId": "school-120",
+      "university": "동아대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "부산"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10591481.html",
+      "totalCapacity": 4019,
+      "totalApplicants": 24421,
+      "deptCount": 419,
+      "ratio": "6.08 : 1",
+      "ratioNum": 6.08
+    },
+    {
+      "key": "동의대학교",
+      "univId": "school-121",
+      "university": "동의대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "부산"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOmBWSmYlJjomSjdmVGY=",
+      "totalCapacity": 3311,
+      "totalApplicants": 16992,
+      "deptCount": 332,
+      "ratio": "5.13 : 1",
+      "ratioNum": 5.13
+    },
+    {
+      "key": "루터대학교",
+      "univId": "school-122",
+      "university": "루터대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOjBDSmYlJjomSjdmVGY=",
+      "totalCapacity": 39,
+      "totalApplicants": 67,
+      "deptCount": 6,
+      "ratio": "1.72 : 1",
+      "ratioNum": 1.72
+    },
+    {
+      "key": "명지대학교",
+      "univId": "school-123",
+      "university": "명지대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10650761.html",
+      "totalCapacity": 3841,
+      "totalApplicants": 48944,
+      "deptCount": 316,
+      "ratio": "12.74 : 1",
+      "ratioNum": 12.74
+    },
+    {
+      "key": "목원대학교",
+      "univId": "school-124",
+      "university": "목원대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "대전"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10670761.html",
+      "totalCapacity": 1978,
+      "totalApplicants": 12469,
+      "deptCount": 101,
+      "ratio": "6.30 : 1",
+      "ratioNum": 6.3
+    },
+    {
+      "key": "목포가톨릭대학교",
+      "univId": "school-125",
+      "university": "목포가톨릭대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전남광주"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOkxNSmYlJjomSjdmVGY=",
+      "totalCapacity": 125,
+      "totalApplicants": 551,
+      "deptCount": 8,
+      "ratio": "4.41 : 1",
+      "ratioNum": 4.41
+    },
+    {
+      "key": "배재대학교",
+      "univId": "school-126",
+      "university": "배재대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "대전"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOkxpSmYlJjomSjdmVGY=",
+      "totalCapacity": 2010,
+      "totalApplicants": 11661,
+      "deptCount": 106,
+      "ratio": "5.80 : 1",
+      "ratioNum": 5.8
+    },
+    {
+      "key": "백석대학교",
+      "univId": "school-127",
+      "university": "백석대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충남"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOkJKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 2455,
+      "totalApplicants": 19175,
+      "deptCount": 128,
+      "ratio": "7.81 : 1",
+      "ratioNum": 7.81
+    },
+    {
+      "key": "부산가톨릭대학교",
+      "univId": "school-128",
+      "university": "부산가톨릭대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "부산"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10730551.html",
+      "totalCapacity": 715,
+      "totalApplicants": 4575,
+      "deptCount": 80,
+      "ratio": "6.40 : 1",
+      "ratioNum": 6.4
+    },
+    {
+      "key": "부산교육대학교",
+      "univId": "school-129",
+      "university": "부산교육대학교",
+      "campus": "",
+      "category": "교대",
+      "univType": "4년제",
+      "regions": [
+        "부산"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio20040281.html",
+      "totalCapacity": 222,
+      "totalApplicants": 1322,
+      "deptCount": 6,
+      "ratio": "5.95 : 1",
+      "ratioNum": 5.95
+    },
+    {
+      "key": "부산대학교",
+      "univId": "school-130",
+      "university": "부산대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "부산"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio12100661.html",
+      "totalCapacity": 3587,
+      "totalApplicants": 41279,
+      "deptCount": 631,
+      "ratio": "11.51 : 1",
+      "ratioNum": 11.51
+    },
+    {
+      "key": "부산외국어대학교",
+      "univId": "school-131",
+      "university": "부산외국어대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "부산"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10750521.html",
+      "totalCapacity": 1574,
+      "totalApplicants": 5265,
+      "deptCount": 26,
+      "ratio": "3.34 : 1",
+      "ratioNum": 3.34
+    },
+    {
+      "key": "삼육대학교",
+      "univId": "school-132",
+      "university": "삼육대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10760741.html",
+      "totalCapacity": 1019,
+      "totalApplicants": 20761,
+      "deptCount": 141,
+      "ratio": "20.37 : 1",
+      "ratioNum": 20.37
+    },
+    {
+      "key": "상명대학교",
+      "univId": "school-133",
+      "university": "상명대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOk0mSmYlJjomSjdmVGY=",
+      "totalCapacity": 907,
+      "totalApplicants": 15066,
+      "deptCount": 130,
+      "ratio": "16.61 : 1",
+      "ratioNum": 16.61
+    },
+    {
+      "key": "상명대학교(천안)",
+      "univId": "school-134",
+      "university": "상명대학교(천안)",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충남"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KZjpNJkpmJSY6Jko3ZlRm",
+      "totalCapacity": 1006,
+      "totalApplicants": 8829,
+      "deptCount": 119,
+      "ratio": "8.78 : 1",
+      "ratioNum": 8.78
+    },
+    {
+      "key": "상지대학교",
+      "univId": "school-135",
+      "university": "상지대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "강원"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KJS9yVzgmSmYlJjomSjdmVGY=",
+      "totalCapacity": 1517,
+      "totalApplicants": 5975,
+      "deptCount": 131,
+      "ratio": "3.94 : 1",
+      "ratioNum": 3.94
+    },
+    {
+      "key": "서경대학교",
+      "univId": "school-136",
+      "university": "서경대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10810661.html",
+      "totalCapacity": 1413,
+      "totalApplicants": 24376,
+      "deptCount": 84,
+      "ratio": "17.25 : 1",
+      "ratioNum": 17.25
+    },
+    {
+      "key": "서울과학기술대학교",
+      "univId": "school-137",
+      "university": "서울과학기술대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KMDpXJkpmJSY6Jko3ZlRm",
+      "totalCapacity": 1747,
+      "totalApplicants": 22406,
+      "deptCount": 166,
+      "ratio": "12.83 : 1",
+      "ratioNum": 12.83
+    },
+    {
+      "key": "서울교육대학교",
+      "univId": "school-138",
+      "university": "서울교육대학교",
+      "campus": "",
+      "category": "교대",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KYDpXJkpmJSY6Jko3ZlRm",
+      "totalCapacity": 245,
+      "totalApplicants": 1087,
+      "deptCount": 8,
+      "ratio": "4.44 : 1",
+      "ratioNum": 4.44
+    },
+    {
+      "key": "서울기독대학교",
+      "univId": "school-139",
+      "university": "서울기독대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10520591.html",
+      "totalCapacity": 106,
+      "totalApplicants": 208,
+      "deptCount": 19,
+      "ratio": "1.96 : 1",
+      "ratioNum": 1.96
+    },
+    {
+      "key": "서울시립대학교",
+      "univId": "school-140",
+      "university": "서울시립대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KJmE6SmYlJjomSjdmVGY=",
+      "totalCapacity": 1036,
+      "totalApplicants": 16863,
+      "deptCount": 160,
+      "ratio": "16.28 : 1",
+      "ratioNum": 16.28
+    },
+    {
+      "key": "서울신학대학교",
+      "univId": "school-141",
+      "university": "서울신학대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOjAmSmYlJjomSjdmVGY=",
+      "totalCapacity": 172,
+      "totalApplicants": 875,
+      "deptCount": 39,
+      "ratio": "5.09 : 1",
+      "ratioNum": 5.09
+    },
+    {
+      "key": "서울여자대학교",
+      "univId": "school-142",
+      "university": "서울여자대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10860821.html",
+      "totalCapacity": 1043,
+      "totalApplicants": 16008,
+      "deptCount": 169,
+      "ratio": "15.35 : 1",
+      "ratioNum": 15.35
+    },
+    {
+      "key": "서울장신대학교",
+      "univId": "school-143",
+      "university": "서울장신대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KVyUmclc4L0M6YWAmSmYlJjomSjdmVGY=",
+      "totalCapacity": 95,
+      "totalApplicants": 313,
+      "deptCount": 10,
+      "ratio": "3.29 : 1",
+      "ratioNum": 3.29
+    },
+    {
+      "key": "서울한영대학교",
+      "univId": "school-144",
+      "university": "서울한영대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11660441.html",
+      "totalCapacity": 171,
+      "totalApplicants": 1108,
+      "deptCount": 10,
+      "ratio": "6.48 : 1",
+      "ratioNum": 6.48
+    },
+    {
+      "key": "서원대학교",
+      "univId": "school-145",
+      "university": "서원대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10880591.html",
+      "totalCapacity": 1593,
+      "totalApplicants": 12260,
+      "deptCount": 82,
+      "ratio": "7.70 : 1",
+      "ratioNum": 7.7
+    },
+    {
+      "key": "선문대학교",
+      "univId": "school-146",
+      "university": "선문대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충남"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KV2FhTVc6JkpmJSY6Jko3ZlRm",
+      "totalCapacity": 1300,
+      "totalApplicants": 5615,
+      "deptCount": 2,
+      "ratio": "4.32 : 1",
+      "ratioNum": 4.32
+    },
+    {
+      "key": "성결대학교",
+      "univId": "school-147",
+      "university": "성결대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10900771.html",
+      "totalCapacity": 1123,
+      "totalApplicants": 15427,
+      "deptCount": 120,
+      "ratio": "13.74 : 1",
+      "ratioNum": 13.74
+    },
+    {
+      "key": "성공회대학교",
+      "univId": "school-148",
+      "university": "성공회대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10910511.html",
+      "totalCapacity": 452,
+      "totalApplicants": 2570,
+      "deptCount": 45,
+      "ratio": "5.69 : 1",
+      "ratioNum": 5.69
+    },
+    {
+      "key": "성신여자대학교",
+      "univId": "school-149",
+      "university": "성신여자대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10930201.html",
+      "totalCapacity": 1478,
+      "totalApplicants": 16108,
+      "deptCount": 164,
+      "ratio": "10.90 : 1",
+      "ratioNum": 10.9
+    },
+    {
+      "key": "세명대학교",
+      "univId": "school-150",
+      "university": "세명대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충북"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5Kclc6Yk1gJkpmJSY6Jko3ZlRm",
+      "totalCapacity": 1379,
+      "totalApplicants": 6270,
+      "deptCount": 111,
+      "ratio": "4.55 : 1",
+      "ratioNum": 4.55
+    },
+    {
+      "key": "세종대학교",
+      "univId": "school-151",
+      "university": "세종대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10950721.html",
+      "totalCapacity": 1857,
+      "totalApplicants": 33139,
+      "deptCount": 168,
+      "ratio": "17.85 : 1",
+      "ratioNum": 17.85
+    },
+    {
+      "key": "송원대학교",
+      "univId": "school-152",
+      "university": "송원대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전남광주"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KV2FOcldhJkpmJSY6Jko3ZlRm",
+      "totalCapacity": 638,
+      "totalApplicants": 1733,
+      "deptCount": 32,
+      "ratio": "2.72 : 1",
+      "ratioNum": 2.72
+    },
+    {
+      "key": "수원대학교",
+      "univId": "school-153",
+      "university": "수원대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10970461.html",
+      "totalCapacity": 1452,
+      "totalApplicants": 22247,
+      "deptCount": 157,
+      "ratio": "15.32 : 1",
+      "ratioNum": 15.32
+    },
+    {
+      "key": "숙명여자대학교",
+      "univId": "school-154",
+      "university": "숙명여자대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio10981501.html",
+      "totalCapacity": 1310,
+      "totalApplicants": 19795,
+      "deptCount": 219,
+      "ratio": "15.11 : 1",
+      "ratioNum": 15.11
+    },
+    {
+      "key": "순천향대학교",
+      "univId": "school-155",
+      "university": "순천향대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충남"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KfEwmSmYlJjomSjdmVGY=",
+      "totalCapacity": 2150,
+      "totalApplicants": 12340,
+      "deptCount": 294,
+      "ratio": "5.74 : 1",
+      "ratioNum": 5.74
+    },
+    {
+      "key": "숭실대학교",
+      "univId": "school-156",
+      "university": "숭실대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11010851.html",
+      "totalCapacity": 1740,
+      "totalApplicants": 41058,
+      "deptCount": 221,
+      "ratio": "23.60 : 1",
+      "ratioNum": 23.6
+    },
+    {
+      "key": "신경주대학교",
+      "univId": "school-157",
+      "university": "신경주대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경북"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOi9yV2FgYnJXJSZKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 392,
+      "totalApplicants": 263,
+      "deptCount": 18,
+      "ratio": "0.67 : 1",
+      "ratioNum": 0.67
+    },
+    {
+      "key": "신라대학교",
+      "univId": "school-158",
+      "university": "신라대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "부산"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11020621.html",
+      "totalCapacity": 1472,
+      "totalApplicants": 12108,
+      "deptCount": 195,
+      "ratio": "8.23 : 1",
+      "ratioNum": 8.23
+    },
+    {
+      "key": "신한대학교",
+      "univId": "school-159",
+      "university": "신한대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11870871.html",
+      "totalCapacity": 1239,
+      "totalApplicants": 15949,
+      "deptCount": 122,
+      "ratio": "12.87 : 1",
+      "ratioNum": 12.87
+    },
+    {
+      "key": "아주대학교",
+      "univId": "school-161",
+      "university": "아주대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11040711.html",
+      "totalCapacity": 1623,
+      "totalApplicants": 27570,
+      "deptCount": 153,
+      "ratio": "16.99 : 1",
+      "ratioNum": 16.99
+    },
+    {
+      "key": "안양대학교",
+      "univId": "school-162",
+      "university": "안양대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5Kclc4Ylc4SmYlJjomSjdmVGY=",
+      "totalCapacity": 1054,
+      "totalApplicants": 9619,
+      "deptCount": 140,
+      "ratio": "9.13 : 1",
+      "ratioNum": 9.13
+    },
+    {
+      "key": "연세대학교(미래)",
+      "univId": "school-163",
+      "university": "연세대학교(미래)",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "강원"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KZiVgJldhYkpmJSY6Jko3ZlRm",
+      "totalCapacity": 1268,
+      "totalApplicants": 6981,
+      "deptCount": 141,
+      "ratio": "5.51 : 1",
+      "ratioNum": 5.51
+    },
+    {
+      "key": "연암대학교",
+      "univId": "school-164",
+      "university": "연암대학교",
+      "campus": "",
+      "category": "전문대",
+      "univType": "전문대",
+      "regions": [
+        "충남"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio41100351.html",
+      "totalCapacity": 788,
+      "totalApplicants": 912,
+      "deptCount": 14,
+      "ratio": "1.16 : 1",
+      "ratioNum": 1.16
+    },
+    {
+      "key": "영남대학교",
+      "univId": "school-165",
+      "university": "영남대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경북"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOmJKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 4223,
+      "totalApplicants": 24742,
+      "deptCount": 418,
+      "ratio": "5.86 : 1",
+      "ratioNum": 5.86
+    },
+    {
+      "key": "영산대학교",
+      "univId": "school-166",
+      "university": "영산대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경남",
+        "부산"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio30100311.html",
+      "totalCapacity": 1331,
+      "totalApplicants": 4792,
+      "deptCount": 78,
+      "ratio": "3.60 : 1",
+      "ratioNum": 3.6
+    },
+    {
+      "key": "예수대학교",
+      "univId": "school-167",
+      "university": "예수대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전북"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOmlNSmYlJjomSjdmVGY=",
+      "totalCapacity": 106,
+      "totalApplicants": 562,
+      "deptCount": 4,
+      "ratio": "5.30 : 1",
+      "ratioNum": 5.3
+    },
+    {
+      "key": "용인대학교",
+      "univId": "school-168",
+      "university": "용인대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KVyVyV2FiSmYlJjomSjdmVGY=",
+      "totalCapacity": 1083,
+      "totalApplicants": 9450,
+      "deptCount": 149,
+      "ratio": "8.73 : 1",
+      "ratioNum": 8.73
+    },
+    {
+      "key": "우석대학교",
+      "univId": "school-169",
+      "university": "우석대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전북",
+        "충북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11150621.html",
+      "totalCapacity": 1348,
+      "totalApplicants": 6139,
+      "deptCount": 133,
+      "ratio": "4.55 : 1",
+      "ratioNum": 4.55
+    },
+    {
+      "key": "우송대학교",
+      "univId": "school-170",
+      "university": "우송대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "대전"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KcldhJmFhTkpmJSY6Jko3ZlRm",
+      "totalCapacity": 1859,
+      "totalApplicants": 16799,
+      "deptCount": 189,
+      "ratio": "9.04 : 1",
+      "ratioNum": 9.04
+    },
+    {
+      "key": "울산대학교",
+      "univId": "school-171",
+      "university": "울산대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "울산"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KVzgmQzpKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 2487,
+      "totalApplicants": 10421,
+      "deptCount": 129,
+      "ratio": "4.19 : 1",
+      "ratioNum": 4.19
+    },
+    {
+      "key": "원광대학교",
+      "univId": "school-172",
+      "university": "원광대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전북"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5Kclc4TjlXYU5KZiUmOiZKN2ZUZg==",
+      "totalCapacity": 3251,
+      "totalApplicants": 18969,
+      "deptCount": 217,
+      "ratio": "5.83 : 1",
+      "ratioNum": 5.83
+    },
+    {
+      "key": "유원대학교",
+      "univId": "school-173",
+      "university": "유원대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충북",
+        "충남"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11120571.html",
+      "totalCapacity": 945,
+      "totalApplicants": 3158,
+      "deptCount": 81,
+      "ratio": "3.34 : 1",
+      "ratioNum": 3.34
+    },
+    {
+      "key": "을지대학교",
+      "univId": "school-174",
+      "university": "을지대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "대전",
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11190711.html",
+      "totalCapacity": 773,
+      "totalApplicants": 10589,
+      "deptCount": 131,
+      "ratio": "13.70 : 1",
+      "ratioNum": 13.7
+    },
+    {
+      "key": "인제대학교",
+      "univId": "school-175",
+      "university": "인제대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경남"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KYC9XJUpmJSY6Jko3ZlRm",
+      "totalCapacity": 1594,
+      "totalApplicants": 6645,
+      "deptCount": 94,
+      "ratio": "4.17 : 1",
+      "ratioNum": 4.17
+    },
+    {
+      "key": "인천가톨릭대학교",
+      "univId": "school-176",
+      "university": "인천가톨릭대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "인천"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11220011.html",
+      "totalCapacity": 105,
+      "totalApplicants": 588,
+      "deptCount": 15,
+      "ratio": "5.60 : 1",
+      "ratioNum": 5.6
+    },
+    {
+      "key": "인하대학교",
+      "univId": "school-177",
+      "university": "인하대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "인천"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOHxXJUpmJSY6Jko3ZlRm",
+      "totalCapacity": 2657,
+      "totalApplicants": 36900,
+      "deptCount": 350,
+      "ratio": "13.89 : 1",
+      "ratioNum": 13.89
+    },
+    {
+      "key": "장로회신학대학교",
+      "univId": "school-178",
+      "university": "장로회신학대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KJjBMaUpmJSY6Jko3ZlRm",
+      "totalCapacity": 151,
+      "totalApplicants": 459,
+      "deptCount": 27,
+      "ratio": "3.04 : 1",
+      "ratioNum": 3.04
+    },
+    {
+      "key": "전남대학교",
+      "univId": "school-179",
+      "university": "전남대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전남광주"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOlcvSmYlJjomSjdmVGY=",
+      "totalCapacity": 3964,
+      "totalApplicants": 26263,
+      "deptCount": 659,
+      "ratio": "6.63 : 1",
+      "ratioNum": 6.63
+    },
+    {
+      "key": "전북대학교",
+      "univId": "school-180",
+      "university": "전북대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전북"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOldCL0pmJSY6Jko3ZlRm",
+      "totalCapacity": 3507,
+      "totalApplicants": 30641,
+      "deptCount": 291,
+      "ratio": "8.74 : 1",
+      "ratioNum": 8.74
+    },
+    {
+      "key": "전주교육대학교",
+      "univId": "school-181",
+      "university": "전주교육대학교",
+      "campus": "",
+      "category": "교대",
+      "univType": "4년제",
+      "regions": [
+        "전북"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KYDpXL0pmJSY6Jko3ZlRm",
+      "totalCapacity": 195,
+      "totalApplicants": 1623,
+      "deptCount": 7,
+      "ratio": "8.32 : 1",
+      "ratioNum": 8.32
+    },
+    {
+      "key": "전주대학교",
+      "univId": "school-182",
+      "university": "전주대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전북"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOi9XYWAvSmYlJjomSjdmVGY=",
+      "totalCapacity": 2450,
+      "totalApplicants": 10434,
+      "deptCount": 147,
+      "ratio": "4.26 : 1",
+      "ratioNum": 4.26
+    },
+    {
+      "key": "제주대학교",
+      "univId": "school-183",
+      "university": "제주대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "제주"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOlc6L2AvSmYlJjomSjdmVGY=",
+      "totalCapacity": 1868,
+      "totalApplicants": 9566,
+      "deptCount": 482,
+      "ratio": "5.12 : 1",
+      "ratioNum": 5.12
+    },
+    {
+      "key": "조선대학교",
+      "univId": "school-184",
+      "university": "조선대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전남광주"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11300581.html",
+      "totalCapacity": 4626,
+      "totalApplicants": 23335,
+      "deptCount": 313,
+      "ratio": "5.04 : 1",
+      "ratioNum": 5.04
+    },
+    {
+      "key": "중부대학교",
+      "univId": "school-185",
+      "university": "중부대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충남",
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11311031.html",
+      "totalCapacity": 1358,
+      "totalApplicants": 11114,
+      "deptCount": 159,
+      "ratio": "8.18 : 1",
+      "ratioNum": 8.18
+    },
+    {
+      "key": "중앙대학교",
+      "univId": "school-186",
+      "university": "중앙대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOjhMSmYlJjomSjdmVGY=",
+      "totalCapacity": 2675,
+      "totalApplicants": 75708,
+      "deptCount": 329,
+      "ratio": "28.30 : 1",
+      "ratioNum": 28.3
+    },
+    {
+      "key": "중원대학교",
+      "univId": "school-187",
+      "university": "중원대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11920301.html",
+      "totalCapacity": 787,
+      "totalApplicants": 2410,
+      "deptCount": 49,
+      "ratio": "3.06 : 1",
+      "ratioNum": 3.06
+    },
+    {
+      "key": "진주교육대학교",
+      "univId": "school-188",
+      "university": "진주교육대학교",
+      "campus": "",
+      "category": "교대",
+      "univType": "4년제",
+      "regions": [
+        "경남"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KYDpMSmYlJjomSjdmVGY=",
+      "totalCapacity": 228,
+      "totalApplicants": 1946,
+      "deptCount": 8,
+      "ratio": "8.54 : 1",
+      "ratioNum": 8.54
+    },
+    {
+      "key": "차 의과학대학교",
+      "univId": "school-189",
+      "university": "차 의과학대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOHxMSmYlJjomSjdmVGY=",
+      "totalCapacity": 420,
+      "totalApplicants": 1957,
+      "deptCount": 17,
+      "ratio": "4.66 : 1",
+      "ratioNum": 4.66
+    },
+    {
+      "key": "청운대학교",
+      "univId": "school-190",
+      "university": "청운대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충남",
+        "인천"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KV2FhTnJXOnxMSmYlJjomSjdmVGY=",
+      "totalCapacity": 998,
+      "totalApplicants": 6298,
+      "deptCount": 53,
+      "ratio": "6.31 : 1",
+      "ratioNum": 6.31
+    },
+    {
+      "key": "청주교육대학교",
+      "univId": "school-191",
+      "university": "청주교육대학교",
+      "campus": "",
+      "category": "교대",
+      "univType": "4년제",
+      "regions": [
+        "충북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio20100341.html",
+      "totalCapacity": 209,
+      "totalApplicants": 1741,
+      "deptCount": 7,
+      "ratio": "8.33 : 1",
+      "ratioNum": 8.33
+    },
+    {
+      "key": "청주대학교",
+      "univId": "school-192",
+      "university": "청주대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충북"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOi9yV2FgfExKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 2418,
+      "totalApplicants": 12559,
+      "deptCount": 219,
+      "ratio": "5.19 : 1",
+      "ratioNum": 5.19
+    },
+    {
+      "key": "초당대학교",
+      "univId": "school-193",
+      "university": "초당대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전남광주"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5Kclc4VmF8TEpmJSY6Jko3ZlRm",
+      "totalCapacity": 686,
+      "totalApplicants": 1684,
+      "deptCount": 17,
+      "ratio": "2.45 : 1",
+      "ratioNum": 2.45
+    },
+    {
+      "key": "총신대학교",
+      "univId": "school-194",
+      "university": "총신대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KVyV8JnJXYXxMSmYlJjomSjdmVGY=",
+      "totalCapacity": 305,
+      "totalApplicants": 1443,
+      "deptCount": 47,
+      "ratio": "4.73 : 1",
+      "ratioNum": 4.73
+    },
+    {
+      "key": "추계예술대학교",
+      "univId": "school-195",
+      "university": "추계예술대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KYGJyOnxMSmYlJjomSjdmVGY=",
+      "totalCapacity": 103,
+      "totalApplicants": 602,
+      "deptCount": 24,
+      "ratio": "5.84 : 1",
+      "ratioNum": 5.84
+    },
+    {
+      "key": "춘천교육대학교",
+      "univId": "school-196",
+      "university": "춘천교육대학교",
+      "campus": "",
+      "category": "교대",
+      "univType": "4년제",
+      "regions": [
+        "강원"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio20110331.html",
+      "totalCapacity": 184,
+      "totalApplicants": 1941,
+      "deptCount": 7,
+      "ratio": "10.55 : 1",
+      "ratioNum": 10.55
+    },
+    {
+      "key": "충남대학교",
+      "univId": "school-197",
+      "university": "충남대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "대전"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11400471.html",
+      "totalCapacity": 3354,
+      "totalApplicants": 32137,
+      "deptCount": 731,
+      "ratio": "9.58 : 1",
+      "ratioNum": 9.58
+    },
+    {
+      "key": "충북대학교",
+      "univId": "school-198",
+      "university": "충북대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11411051.html",
+      "totalCapacity": 2743,
+      "totalApplicants": 23432,
+      "deptCount": 604,
+      "ratio": "8.54 : 1",
+      "ratioNum": 8.54
+    },
+    {
+      "key": "침례신학대학교",
+      "univId": "school-199",
+      "university": "침례신학대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "대전"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KJjowQjlKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 212,
+      "totalApplicants": 50,
+      "deptCount": 4,
+      "ratio": "0.24 : 1",
+      "ratioNum": 0.24
+    },
+    {
+      "key": "칼빈대학교",
+      "univId": "school-200",
+      "university": "칼빈대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KVyVEQzhMSmYlJjomSjdmVGY=",
+      "totalCapacity": 86,
+      "totalApplicants": 278,
+      "deptCount": 12,
+      "ratio": "3.23 : 1",
+      "ratioNum": 3.23
+    },
+    {
+      "key": "평택대학교",
+      "univId": "school-201",
+      "university": "평택대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOjBpSmYlJjomSjdmVGY=",
+      "totalCapacity": 782,
+      "totalApplicants": 8004,
+      "deptCount": 85,
+      "ratio": "10.24 : 1",
+      "ratioNum": 10.24
+    },
+    {
+      "key": "포항공과대학교",
+      "univId": "school-202",
+      "university": "포항공과대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경북"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KfExgMCZhaUpmJSY6Jko3ZlRm",
+      "totalCapacity": 370,
+      "totalApplicants": 3453,
+      "deptCount": 6,
+      "ratio": "9.33 : 1",
+      "ratioNum": 9.33
+    },
+    {
+      "key": "한경국립대학교",
+      "univId": "school-203",
+      "university": "한경국립대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio30161171.html",
+      "totalCapacity": 1067,
+      "totalApplicants": 10760,
+      "deptCount": 208,
+      "ratio": "10.08 : 1",
+      "ratioNum": 10.08
+    },
+    {
+      "key": "한국공학대학교",
+      "univId": "school-204",
+      "university": "한국공학대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio30170741.html",
+      "totalCapacity": 1159,
+      "totalApplicants": 11662,
+      "deptCount": 116,
+      "ratio": "10.06 : 1",
+      "ratioNum": 10.06
+    },
+    {
+      "key": "한국과학기술원(KAIST)",
+      "univId": "school-205",
+      "university": "한국과학기술원(KAIST)",
+      "campus": "",
+      "category": "과기원/특수대",
+      "univType": "특수대",
+      "regions": [
+        "대전"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KMCYlODlKXiUmOiZKN2ZUZg==",
+      "totalCapacity": 865,
+      "totalApplicants": 8394,
+      "deptCount": 6,
+      "ratio": "9.70 : 1",
+      "ratioNum": 9.7
+    },
+    {
+      "key": "한국교원대학교",
+      "univId": "school-206",
+      "university": "한국교원대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11480401.html",
+      "totalCapacity": 364,
+      "totalApplicants": 2209,
+      "deptCount": 60,
+      "ratio": "6.07 : 1",
+      "ratioNum": 6.07
+    },
+    {
+      "key": "한국기술교육대학교",
+      "univId": "school-207",
+      "university": "한국기술교육대학교",
+      "campus": "",
+      "category": "교대",
+      "univType": "4년제",
+      "regions": [
+        "충남"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KfExgMDhgfWE5SmYlJjomSjdmVGY=",
+      "totalCapacity": 647,
+      "totalApplicants": 8476,
+      "deptCount": 100,
+      "ratio": "13.10 : 1",
+      "ratioNum": 13.1
+    },
+    {
+      "key": "한국에너지공과대학교(KENTECH)",
+      "univId": "school-208",
+      "university": "한국에너지공과대학교(KENTECH)",
+      "campus": "",
+      "category": "과기원/특수대",
+      "univType": "특수대",
+      "regions": [
+        "전남광주"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KfExgMFdgOUpeJSY6Jko3ZlRm",
+      "totalCapacity": 100,
+      "totalApplicants": 2962,
+      "deptCount": 2,
+      "ratio": "29.62 : 1",
+      "ratioNum": 29.62
+    },
+    {
+      "key": "한국외국어대학교",
+      "univId": "school-209",
+      "university": "한국외국어대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울",
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KJmg6fEpmJSY6Jko3ZlRm",
+      "totalCapacity": 2102,
+      "totalApplicants": 46352,
+      "deptCount": 315,
+      "ratio": "22.05 : 1",
+      "ratioNum": 22.05
+    },
+    {
+      "key": "한국체육대학교",
+      "univId": "school-210",
+      "university": "한국체육대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11530431.html",
+      "totalCapacity": 300,
+      "totalApplicants": 1932,
+      "deptCount": 128,
+      "ratio": "6.44 : 1",
+      "ratioNum": 6.44
+    },
+    {
+      "key": "한국항공대학교",
+      "univId": "school-211",
+      "university": "한국항공대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11540991.html",
+      "totalCapacity": 604,
+      "totalApplicants": 9628,
+      "deptCount": 30,
+      "ratio": "15.94 : 1",
+      "ratioNum": 15.94
+    },
+    {
+      "key": "한남대학교",
+      "univId": "school-212",
+      "university": "한남대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "대전"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11560931.html",
+      "totalCapacity": 2600,
+      "totalApplicants": 13045,
+      "deptCount": 232,
+      "ratio": "5.02 : 1",
+      "ratioNum": 5.02
+    },
+    {
+      "key": "한동대학교",
+      "univId": "school-213",
+      "university": "한동대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경북"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11570811.html",
+      "totalCapacity": 1432,
+      "totalApplicants": 6438,
+      "deptCount": 14,
+      "ratio": "4.50 : 1",
+      "ratioNum": 4.5
+    },
+    {
+      "key": "한라대학교",
+      "univId": "school-214",
+      "university": "한라대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "강원"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KOENDOHxKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 885,
+      "totalApplicants": 3916,
+      "deptCount": 85,
+      "ratio": "4.42 : 1",
+      "ratioNum": 4.42
+    },
+    {
+      "key": "한림대학교",
+      "univId": "school-215",
+      "university": "한림대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "강원"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KTWJDQzh8SmYlJjomSjdmVGY=",
+      "totalCapacity": 1756,
+      "totalApplicants": 8131,
+      "deptCount": 177,
+      "ratio": "4.63 : 1",
+      "ratioNum": 4.63
+    },
+    {
+      "key": "한서대학교",
+      "univId": "school-216",
+      "university": "한서대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충남"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11600881.html",
+      "totalCapacity": 1607,
+      "totalApplicants": 13561,
+      "deptCount": 127,
+      "ratio": "8.44 : 1",
+      "ratioNum": 8.44
+    },
+    {
+      "key": "한성대학교",
+      "univId": "school-217",
+      "university": "한성대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "서울"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5Kclc6Jlc4fEpmJSY6Jko3ZlRm",
+      "totalCapacity": 1110,
+      "totalApplicants": 9635,
+      "deptCount": 69,
+      "ratio": "8.68 : 1",
+      "ratioNum": 8.68
+    },
+    {
+      "key": "한세대학교",
+      "univId": "school-218",
+      "university": "한세대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KJWAmVzh8SmYlJjomSjdmVGY=",
+      "totalCapacity": 435,
+      "totalApplicants": 3874,
+      "deptCount": 35,
+      "ratio": "8.91 : 1",
+      "ratioNum": 8.91
+    },
+    {
+      "key": "한신대학교",
+      "univId": "school-219",
+      "university": "한신대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11630451.html",
+      "totalCapacity": 1136,
+      "totalApplicants": 8098,
+      "deptCount": 101,
+      "ratio": "7.13 : 1",
+      "ratioNum": 7.13
+    },
+    {
+      "key": "한양대학교(ERICA)",
+      "univId": "school-220",
+      "university": "한양대학교(ERICA)",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11650731.html",
+      "totalCapacity": 1571,
+      "totalApplicants": 19471,
+      "deptCount": 136,
+      "ratio": "12.39 : 1",
+      "ratioNum": 12.39
+    },
+    {
+      "key": "한일장신대학교",
+      "univId": "school-221",
+      "university": "한일장신대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전북"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KQyVXOHxKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 168,
+      "totalApplicants": 78,
+      "deptCount": 14,
+      "ratio": "0.46 : 1",
+      "ratioNum": 0.46
+    },
+    {
+      "key": "협성대학교",
+      "univId": "school-222",
+      "university": "협성대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5Kclc6Jmk6YnxKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 770,
+      "totalApplicants": 5273,
+      "deptCount": 173,
+      "ratio": "6.85 : 1",
+      "ratioNum": 6.85
+    },
+    {
+      "key": "호남대학교",
+      "univId": "school-223",
+      "university": "호남대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "전남광주"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11690691.html",
+      "totalCapacity": 1322,
+      "totalApplicants": 6057,
+      "deptCount": 55,
+      "ratio": "4.58 : 1",
+      "ratioNum": 4.58
+    },
+    {
+      "key": "호서대학교",
+      "univId": "school-224",
+      "university": "호서대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "충남"
+      ],
+      "platform": "uwayapply",
+      "ratioUrl": "https://ratio.uwayapply.com/Sl5KYWAmYXxKZiUmOiZKN2ZUZg==",
+      "totalCapacity": 2794,
+      "totalApplicants": 17054,
+      "deptCount": 227,
+      "ratio": "6.10 : 1",
+      "ratioNum": 6.1
+    },
+    {
+      "key": "홍익대학교(세종)",
+      "univId": "school-225",
+      "university": "홍익대학교(세종)",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "세종"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11720892.html",
+      "totalCapacity": 974,
+      "totalApplicants": 7631,
+      "deptCount": 82,
+      "ratio": "7.83 : 1",
+      "ratioNum": 7.83
+    },
+    {
+      "key": "화성의과학대학교",
+      "univId": "school-226",
+      "university": "화성의과학대학교",
+      "campus": "",
+      "category": "4년제",
+      "univType": "4년제",
+      "regions": [
+        "경기"
+      ],
+      "platform": "jinhakapply",
+      "ratioUrl": "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio11880441.html",
+      "totalCapacity": 262,
+      "totalApplicants": 765,
+      "deptCount": 29,
+      "ratio": "2.92 : 1",
+      "ratioNum": 2.92
+    }
+  ]
+}

@@ -21,7 +21,7 @@ export const App: React.FC = () => {
   const [driveTargetUrl, setDriveTargetUrl] = useState('https://drive.google.com/drive/u/0/folders/1WmHB5_EqiZklq6kRnMXDn_kfbNXAD61j');
 
   const fetchStatusAndUnivs = async () => {
-    // 1. Try local FastAPI server first if available
+    // 1. Try local FastAPI server status
     try {
       const resSt = await fetch('/api/status');
       if (resSt.ok) {
@@ -31,25 +31,50 @@ export const App: React.FC = () => {
         if (st.defaultLabel) setDefaultLabel(st.defaultLabel);
       }
     } catch {
-      // Offline/Cloud mode
       setServerTime(new Date().toISOString());
     }
 
+    // 2. Load nationwide 246 universities dataset
+    let allUnivsList: University[] = [];
     try {
-      const resUniv = await fetch('/api/universities');
-      if (resUniv.ok) {
-        const data = await resUniv.json();
-        setUniversities(data || []);
-        return;
+      const resSummary = await fetch('/data/universities_summary.json');
+      if (resSummary.ok) {
+        const data = await resSummary.json();
+        allUnivsList = (data.universities || []).map((u: any) => ({
+          key: u.key,
+          fullName: u.fullName || u.key,
+          region: Array.isArray(u.regions) ? u.regions.join(', ') : (u.region || '전국'),
+          regions: u.regions || ['기타'],
+          category: u.category || '4년제',
+          univType: u.univType || '4년제',
+          deptCount: u.deptCount || 0,
+          campus: u.campus || null,
+          platform: u.platform || 'jinhakapply',
+          ratioUrl: u.ratioUrl || null,
+          acceptStart: null,
+          acceptEnd: null,
+          inScope: true,
+          totalRounds: 1,
+          snapshotCount: 1,
+          latestSnapshot: {
+            label: '최종',
+            capturedAt: data.updated_at || new Date().toISOString(),
+            status: 'ok',
+            notice: null,
+            mojip: u.totalCapacity || 0,
+            jiwon: u.totalApplicants || 0,
+            ratio: u.ratio || '-',
+          },
+        }));
       }
-    } catch {
-      // Local API not responding -> Fallback to direct Firebase Firestore!
+    } catch (e) {
+      console.warn('Failed to load universities_summary.json:', e);
     }
 
-    // 2. Direct Firestore fetch fallback
+    // 3. Direct Firestore fetch to enrich 교대 & 과기원 live snapshots
     try {
       const querySnapshot = await getDocs(collection(db, '교대경쟁률'));
-      const list: University[] = [];
+      const fsMap = new Map<string, University>();
       querySnapshot.forEach((d) => {
         const data = d.data();
         const lastSnap = data.lastSnapshot || {};
@@ -58,20 +83,23 @@ export const App: React.FC = () => {
         const jiwon = lastSnap.jiwon ?? summary.jiwon ?? 0;
         const ratio = lastSnap.ratio ?? summary.ratio ?? '-';
 
-        list.push({
+        fsMap.set(d.id, {
           key: d.id,
           fullName: data.fullName || d.id,
           region: data.region || '전국',
+          regions: data.region ? [data.region] : ['전국'],
+          category: d.id.includes('교대') || d.id === '한국교원대' ? '교대' : '과기원/특수대',
+          univType: '4년제',
           platform: data.platform || 'jinhakapply',
           ratioUrl: data.ratioUrl || null,
           acceptStart: data.acceptStart || null,
           acceptEnd: data.acceptEnd || null,
           inScope: data.inScope !== false,
           note: data.note || '',
-          totalRounds: data.totalRounds || 7,
+          totalRounds: data.totalRounds || 8,
           snapshotCount: data.snapshotCount || 1,
           latestSnapshot: {
-            label: lastSnap.label || '09월07일20시',
+            label: lastSnap.label || '최종',
             capturedAt: lastSnap.capturedAt || new Date().toISOString(),
             status: (lastSnap.status as any) || (data.ratioUrl ? 'ok' : 'pre'),
             notice: lastSnap.notice || null,
@@ -82,23 +110,30 @@ export const App: React.FC = () => {
           },
         });
       });
-      if (list.length > 0) {
-        // 정렬: 교대 우선, 과기원 그룹
-        const order = [
-          '경인교대', '공주교대', '광주교대', '대구교대', '부산교대',
-          '서울교대', '전주교대', '진주교대', '청주교대', '춘천교대', '한국교원대',
-          'DGIST', 'GIST', 'KAIST', 'KENTECH', 'POSTECH', 'UNIST'
-        ];
-        list.sort((a, b) => {
-          const idxA = order.indexOf(a.key);
-          const idxB = order.indexOf(b.key);
-          if (idxA !== -1 && idxB !== -1) return idxA - idxB;
-          return a.key.localeCompare(b.key);
+
+      if (allUnivsList.length > 0) {
+        // Merge Firestore data into allUnivsList
+        const merged = allUnivsList.map((u) => {
+          const fsUniv = fsMap.get(u.key);
+          if (fsUniv) {
+            return {
+              ...u,
+              ...fsUniv,
+              deptCount: u.deptCount || fsUniv.deptCount,
+              category: fsUniv.category || u.category,
+            };
+          }
+          return u;
         });
-        setUniversities(list);
+        setUniversities(merged);
+      } else if (fsMap.size > 0) {
+        setUniversities(Array.from(fsMap.values()));
       }
     } catch (e) {
       console.error('Firestore fallback failed:', e);
+      if (allUnivsList.length > 0) {
+        setUniversities(allUnivsList);
+      }
     }
   };
 
