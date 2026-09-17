@@ -19,87 +19,58 @@ class University:
     region: str
     platform: str            # "jinhakapply" | "uwayapply"
     ratio_url: str | None    # None = 아직 미공개 (접수 전)
-    accept_start: datetime | None
-    accept_end: datetime | None
+    accept_start: datetime | None = None
+    accept_end: datetime | None = None
     in_scope: bool = True
     publish_until: datetime | None = None
     note: str = ""
+    category: str = "4년제"
+    campus: str | None = None
+    dept_count: int = 0
 
 
-UNIVERSITIES: list[University] = [
-    # ───────────── 교대 (in_scope=True) ─────────────
-    University("경인교대", "경인교육대학교", "인천", "jinhakapply",
-               "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio20060251.html",
-               kst("2026-09-07 09:00"), kst("2026-09-11 17:00"),
-               publish_until=kst("2026-09-11 17:00"),
-               note="2027 실시간 URL 확정 (10분마다 업데이트, 종료 시까지 공개)"),
-    University("공주교대", "공주교육대학교", "충남", "uwayapply",
-               None, kst("2026-09-08 10:00"), kst("2026-09-11 16:00"),
-               note="9/8 접수 시작 후 URL 확인 (uwayapply 파워경쟁률)"),
-    University("광주교대", "광주교육대학교", "광주", "uwayapply",
-               "https://ratio.uwayapply.com/Sl5KYDY6L3JXOE45SmYlJjomSjdmVGY=",
-               kst("2026-09-07 09:00"), kst("2026-09-11 17:00"),
-               note="2027 실시간 URL 확정"),
-    University("대구교대", "대구교육대학교", "대구", "uwayapply",
-               "https://ratio.uwayapply.com/Sl5KYDpXVkpmJSY6Jko3ZlRm",
-               kst("2026-09-07 10:00"), kst("2026-09-11 18:00"),
-               note="2027 실시간 URL 확정"),
-    University("부산교대", "부산교육대학교", "부산", "jinhakapply",
-               "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio20040281.html",
-               kst("2026-09-07 10:00"), kst("2026-09-11 17:00"),
-               publish_until=kst("2026-09-11 15:00"),
-               note="2027 실시간 URL 확정 (10분 단위 공지, 11일 15:00까지)"),
-    University("서울교대", "서울교육대학교", "서울", "uwayapply",
-               None, kst("2026-09-08 10:00"), kst("2026-09-11 18:00"),
-               note="9/8 접수 시작 후 URL 확인"),
-    University("전주교대", "전주교육대학교", "전북", "uwayapply",
-               "https://ratio.uwayapply.com/Sl5KYDpXL0pmJSY6Jko3ZlRm",
-               kst("2026-09-07 09:00"), kst("2026-09-11 17:00"),
-               note="2027 실시간 URL 확정"),
-    University("진주교대", "진주교육대학교", "경남", "uwayapply",
-               "https://ratio.uwayapply.com/Sl5KYDpMSmYlJjomSjdmVGY=",
-               kst("2026-09-07 09:00"), kst("2026-09-11 18:00"),
-               note="2027 실시간 URL 확정"),
-    University("청주교대", "청주교육대학교", "충북", "jinhakapply",
-               "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio20100341.html",
-               kst("2026-09-07 09:00"), kst("2026-09-11 17:00"),
-               publish_until=kst("2026-09-11 16:00"),
-               note="2027 실시간 URL 확정 (10분 단위 공지, 11일 16:00까지)"),
-    University("춘천교대", "춘천교육대학교", "강원", "jinhakapply",
-               "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio20110331.html",
-               kst("2026-09-07 09:00"), kst("2026-09-11 17:00"),
-               publish_until=kst("2026-09-11 15:00"),
-               note="2027 실시간 URL 확정 (11일 15:00까지 제공, 최종은 홈페이지 공지)"),
-    University("한국교원대", "한국교원대학교", "충북", "jinhakapply",
-               None, kst("2026-09-08 09:00"), kst("2026-09-11 18:00"),
-               note="9/8 접수 시작 후 URL 확인 (진학사 단독)"),
+def _load_all_universities() -> list[University]:
+    import json
+    from pathlib import Path
+    
+    # Try loading from universities_summary.json
+    summary_path = Path(__file__).resolve().parent.parent.parent / "web" / "public" / "data" / "universities_summary.json"
+    if summary_path.exists():
+        try:
+            with open(summary_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            loaded = []
+            for u in data.get("universities", []):
+                k = u.get("key")
+                cat = u.get("category", "4년제")
+                reg = u.get("region") or (u.get("regions", ["전국"])[0] if u.get("regions") else "전국")
+                loaded.append(University(
+                    key=k,
+                    full_name=u.get("fullName", k),
+                    region=reg,
+                    platform=u.get("platform", "jinhakapply"),
+                    ratio_url=u.get("ratioUrl"),
+                    accept_start=None,
+                    accept_end=None,
+                    in_scope=True,
+                    category=cat,
+                    campus=u.get("campus"),
+                    dept_count=u.get("deptCount", 0),
+                    note=f"{cat} ({u.get('deptCount', 0)}개 모집단위)"
+                ))
+            if loaded:
+                return loaded
+        except Exception as e:
+            pass
 
-    # ───────────── 과기원 및 특성화대 (in_scope=True) ─────────────
-    University("DGIST", "대구경북과학기술원(DGIST)", "대구", "uwayapply",
-               "https://ratio.uwayapply.com/Sl5KMCYlclZKXiUmOiZKN2ZUZg==",
-               kst("2026-09-03 09:00"), kst("2026-09-10 18:00"), in_scope=True,
-               note="2027 실시간 URL 확정"),
-    University("GIST", "광주과학기술원(GIST)", "광주", "uwayapply",
-               "https://ratio.uwayapply.com/Sl5KbzBlbyZlbyVlb3JlSl4lJjomSjdmVGY=",
-               kst("2026-09-07 09:00"), kst("2026-09-11 18:00"), in_scope=True,
-               note="2027 실시간 URL 확정"),
-    University("KAIST", "한국과학기술원(KAIST)", "대전", "uwayapply",
-               "https://ratio.uwayapply.com/Sl5KMCYlODlKXiUmOiZKN2ZUZg==",
-               kst("2026-09-05 09:00"), kst("2026-09-09 18:00"), in_scope=True,
-               note="2027 실시간 URL 확정"),
-    University("KENTECH", "한국에너지공과대학교(KENTECH)", "전남", "uwayapply",
-               "https://ratio.uwayapply.com/Sl5KfExgMFdgOUpeJSY6Jko3ZlRm",
-               kst("2026-09-05 09:00"), kst("2026-09-11 18:00"), in_scope=True,
-               note="2027 실시간 URL 확정"),
-    University("POSTECH", "포항공과대학교(POSTECH)", "경북", "uwayapply",
-               "https://ratio.uwayapply.com/Sl5KfExgMCZhaUpmJSY6Jko3ZlRm",
-               kst("2026-09-05 09:00"), kst("2026-09-09 18:00"), in_scope=True,
-               note="2027 실시간 URL 확정"),
-    University("UNIST", "울산과학기술원(UNIST)", "울산", "uwayapply",
-               "https://ratio.uwayapply.com/Sl5KMCYlVzpKXiUmOiZKN2ZUZg==",
-               kst("2026-09-03 09:00"), kst("2026-09-10 18:00"), in_scope=True,
-               note="2027 실시간 URL 확정"),
-]
+    # Fallback default
+    return [
+        University("경인교대", "경인교육대학교", "인천", "jinhakapply", "https://addon.jinhakapply.com/RatioV1/RatioH/Ratio20060251.html", category="교대"),
+        University("서울교대", "서울교육대학교", "서울", "uwayapply", "https://ratio.uwayapply.com/Sl5KYDpXJkpmJSY6Jko3ZlRm", category="교대"),
+        University("KAIST", "한국과학기술원(KAIST)", "대전", "uwayapply", "https://ratio.uwayapply.com/Sl5KMCYlODlKXiUmOiZKN2ZUZg==", category="과기원/특수대"),
+    ]
+
+UNIVERSITIES: list[University] = _load_all_universities()
 
 
 def normalize_uway_url(url: str) -> str:
@@ -117,4 +88,12 @@ def in_scope() -> list[University]:
 
 
 def by_key(key: str) -> University:
-    return next(u for u in UNIVERSITIES if u.key == key)
+    match = next((u for u in UNIVERSITIES if u.key == key), None)
+    if match:
+        return match
+    # Partial match fallback
+    match = next((u for u in UNIVERSITIES if key in u.key or u.key in key), None)
+    if match:
+        return match
+    raise KeyError(f"University '{key}' not found.")
+

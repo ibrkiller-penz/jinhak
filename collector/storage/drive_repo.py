@@ -16,7 +16,7 @@ logger = logging.getLogger("DriveRepo")
 
 DEFAULT_GAS_WEBHOOK = os.getenv(
     "GAS_WEBHOOK_URL",
-    "https://script.google.com/macros/s/AKfycbwo_6L7Fkjg_iv7LgsI9BB6EYY2Gz0yK0B7dnG9DxfP5yECtA1pboX3mud77YQG9BaHbg/exec"
+    "https://script.google.com/macros/s/AKfycbwN1BJAu3JUC98NTIFEj4Qx2rzKTqB4hEhBIsWH1ITs5iu3qAhRSjIV6gW4X80s3y7E9A/exec"
 )
 DEFAULT_ROOT_FOLDER_ID = os.getenv("GDRIVE_ROOT_FOLDER_ID", "1WmHB5_EqiZklq6kRnMXDn_kfbNXAD61j")
 
